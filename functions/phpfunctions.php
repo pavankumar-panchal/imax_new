@@ -1,5 +1,4 @@
 <?php
-
 //Include Database Configuration details
 if (file_exists("../inc/dbconfig.php")) {
 	include('../inc/dbconfig.php');
@@ -89,9 +88,7 @@ function runmysqlquery($query)
 	mysqli_select_db($newconnection, $dbname) or die("Cannot connect to database");
 	set_time_limit(3600);
 	//Run the query
-
 	$result = mysqli_query($newconnection, $query) or die(" run Query Failed in Runquery function1." . $query); //;
-
 	//Return the result
 	return $result;
 }
@@ -102,10 +99,10 @@ function runmysqlquery_old($query)
 	$dbname = 'relyon_imax';
 
 	//Connect to Database
-	mysqli_select_db($dbname, $newconnection_old) or die("Cannot connect to database");
+	mysqli_select_db($newconnection_old, $dbname) or die("Cannot connect to database");
 	set_time_limit(3600);
 	//Run the query
-	$result = mysqli_query($query, $newconnection_old) or die(" run Query Failed in Runquery function1." . $query); //;
+	$result = mysqli_query($newconnection_old, $query) or die(" run Query Failed in Runquery function1." . $query); //;
 
 	//Return the result
 	return $result;
@@ -136,10 +133,10 @@ function runmysqlqueryfetch_old($query)
 	$dbname = 'relyon_imax';
 
 	//Connect to Database
-	mysqli_select_db($dbname, $newconnection_old) or die("Cannot connect to database");
+	mysqli_select_db($newconnection_old, $dbname) or die("Cannot connect to database");
 	set_time_limit(3600);
 	//Run the query
-	$result = mysqli_query($query, $newconnection_old) or die(" run Query Failed in Runquery function1." . $query); //;
+	$result = mysqli_query($newconnection_old ,$query) or die(" run Query Failed in Runquery function1." . $query); //;
 
 	//Fetch the Query to an array
 	$fetchresult = mysqli_fetch_array($result) or die("Cannot fetch the query result." . $query);

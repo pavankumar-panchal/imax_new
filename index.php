@@ -31,7 +31,7 @@ if (isset($_POST["login"])) {
 WHERE username = '" . $username . "' AND disablelogin = 'no'";
 
 
-		echo $query;
+		// echo $query;
 		$result = mysqli_query($newconnection, $query);
 		if (mysqli_num_rows($result) > 0) {
 			$fetch = runmysqlqueryfetch($query);
