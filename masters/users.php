@@ -1,4 +1,4 @@
-<?
+<?php
 if($usertype <> 'ADMIN')
 {
 	header("location:../index.php?a_link=home_dashboard");
@@ -31,10 +31,10 @@ else
                       <td valign="top">User ID:</td>
                       <td valign="top"><input name="username" type="text" class="swifttext" id="username" size="30"  style="background:#FEFFE6;" />
                           <input type="hidden" name="lastslno" id="lastslno" value="" />
-                          <input type="hidden" name="loggeduser" id="loggeduser" value="<? echo($user); ?>"/>
-                          <input type="hidden" name="loggedusertype" id="loggedusertype" value="<? echo($usertype); ?>"/>
+                          <input type="hidden" name="loggeduser" id="loggeduser" value="<?php echo($user); ?>"/>
+                          <input type="hidden" name="loggedusertype" id="loggedusertype" value="<?php echo($usertype); ?>"/>
                           <input type="hidden" name="time" id="time" value=""/>
-                          <input type="hidden" name="loggedreportingauthority" id="loggedreportingauthority" value="<? echo($reportingauthority ); ?>"/></td>
+                          <input type="hidden" name="loggedreportingauthority" id="loggedreportingauthority" value="<?php echo($reportingauthority ); ?>"/></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top">Password:</td>
@@ -57,21 +57,21 @@ else
                       <td valign="top">Location:</td>
                       <td valign="top"><select name="locationname" class="swiftselect" id="locationname" style="background:#FEFFE6;">
                           <option value="" selected="selected">Make A Selection</option>
-                          <? include('../inc/selectlocation.php'); ?>
+                          <?php include('../inc/selectlocation.php'); ?>
                       </select></td>
                     </tr>
                     <tr bgcolor="#f7faff">
                       <td valign="top">Reporting Authority:</td>
                       <td valign="top"><select name="reportingauthority" class="swiftselect" id="reportingauthority">
                           <option value="" selected="selected">Make A Selection</option>
-                          <? include('../inc/reportingauthority.php'); ?>
+                          <?php include('../inc/reportingauthority.php'); ?>
                         </select>                      </td>
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top">Support Unit:</td>
                       <td valign="top"><select name="supportunit" class="swiftselect" id="supportunit" style="background:#FEFFE6;">
                         <option value="" selected="selected">Make A Selection</option>
-                        <? include('../inc/supportunit.php'); ?>
+                        <?php include('../inc/supportunit.php'); ?>
                       </select></td>
                     </tr>
                     <tr bgcolor="#f7faff">
@@ -358,4 +358,4 @@ else
     </table></td>
   </tr>
 </table>
-<? } ?>
+<?php } ?>

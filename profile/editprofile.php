@@ -1,15 +1,15 @@
-<?
+<?php
 if(!isset($message)){ $message = null;	}
 
 ?>
-<link rel="stylesheet" type="text/css" href="../style/main.css?dummy = <? echo (rand());?>">
-<script language="javascript" src="../functions/editprofile.js?dummy = <? echo (rand());?>" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="../style/main.css?dummy = <?php echo (rand());?>">
+<script language="javascript" src="../functions/editprofile.js?dummy = <?php echo (rand());?>" type="text/javascript"></script>
 <table width="100%" border="0" cellspacing="0" cellpadding="4">
   <tr>
     <td class="content-header">Profile > Edit Profile</td>
   </tr>
   <tr>
-    <td><div><? echo($message); ?></div></td>
+    <td><div><?php echo($message); ?></div></td>
   </tr>
   <tr>
     <td style="padding:0"><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border:1px solid #6393df; border-top:none;">
@@ -30,19 +30,19 @@ if(!isset($message)){ $message = null;	}
                     <tr bgcolor="#edf4ff">
                       <td valign="top">Gender:</td>
                       <td valign="top"><select name="gender" id="gender" class="swiftselect">
-                          <? if($d_gender == '') { ?>
+                          <?php if($d_gender == '') { ?>
                           <option value="" selected="selected">Make A Selection</option>
                           <option value="male">Male</option>
                           <option value="female">Female</option>
-                        <? } elseif($d_gender == 'male') { ?>
+                        <?php } elseif($d_gender == 'male') { ?>
                           <option value="">Make A Selection</option>
                           <option value="male" selected="selected">Male</option>
                           <option value="female">Female</option>
-                        <? } elseif($d_gender == 'female') { ?>
+                        <?php } elseif($d_gender == 'female') { ?>
                           <option value="">Make A Selection</option>
                           <option value="male">Male</option>
                           <option value="female" selected="selected">Female</option>
-						<? } ?>
+						<?php } ?>
                       </select></td>
                     </tr>
                     <tr bgcolor="#f7faff">
@@ -59,13 +59,13 @@ if(!isset($message)){ $message = null;	}
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top">Present Address:</td>
-                      <td valign="top"><textarea name="presentaddress" cols="45" class="swifttextarea" id="presentaddress" autocomplete="off"><? echo($d_presentaddress); ?></textarea></td>
+                      <td valign="top"><textarea name="presentaddress" cols="45" class="swifttextarea" id="presentaddress" autocomplete="off"><?php echo($d_presentaddress); ?></textarea></td>
                     </tr>
                 </table></td>
                 <td width="50%" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="3">
                     <tr bgcolor="#f7faff">
                       <td valign="top">Permanent Address:</td>
-                      <td valign="top"><textarea name="permanentaddress" cols="45" class="swifttextarea" id="permanentaddress" autocomplete="off"><? echo($d_permanentaddress); ?></textarea></td>
+                      <td valign="top"><textarea name="permanentaddress" cols="45" class="swifttextarea" id="permanentaddress" autocomplete="off"><?php echo($d_permanentaddress); ?></textarea></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top">Date of joining:</td>

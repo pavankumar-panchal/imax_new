@@ -1,4 +1,4 @@
-<?
+<?php
 if($usertype <> 'ADMIN')
 {
 	header("location:../index.php?a_link=home_dashboard");
@@ -6,8 +6,8 @@ if($usertype <> 'ADMIN')
 else
 {
 ?>
-<link rel="stylesheet" type="text/css" href="../style/main.css?dummy = <? echo (rand());?>">
-<script language="javascript" src="../functions/nonworkingdays.js?dummy = <? echo (rand());?>" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="../style/main.css?dummy = <?php echo (rand());?>">
+<script language="javascript" src="../functions/nonworkingdays.js?dummy = <?php echo (rand());?>" type="text/javascript"></script>
 
 <table width="100%" border="0" cellspacing="0" cellpadding="4">
   <tr>
@@ -32,9 +32,9 @@ else
                       <td valign="top" bgcolor="#f7faff">Date:</td>
                       <td valign="top"><input name="date" type="text" class="swifttext" id="DPC_date" size="30"  style="background:#FEFFE6;" />
                       <input type="hidden" name="lastslno" id="lastslno" value="" />
-                          <input type="hidden" name="loggeduser" id="loggeduser" value="<? echo($user); ?>"/>
-                          <input type="hidden" name="loggedusertype" id="loggedusertype" value="<? echo($usertype); ?>"/>
-                          <input type="hidden" name="loggedreportingauthority" id="loggedreportingauthority" value="<? echo($reportingauthority ); ?>"/></td>
+                          <input type="hidden" name="loggeduser" id="loggeduser" value="<?php echo($user); ?>"/>
+                          <input type="hidden" name="loggedusertype" id="loggedusertype" value="<?php echo($usertype); ?>"/>
+                          <input type="hidden" name="loggedreportingauthority" id="loggedreportingauthority" value="<?php echo($reportingauthority ); ?>"/></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top">Occassion:</td>
@@ -50,9 +50,9 @@ else
                 <td align="right" valign="middle" style="padding-right:15px; border-top:1px solid #d1dceb;"><table width="100%" border="0" cellspacing="0" cellpadding="0" height="35">
   <tr>
                 <td width="68%" height="35" align="left" valign="middle"><div id="form-error"></div></td>
-                <td width="32%" height="35" align="right" valign="middle"><input name="new" type="reset" id="new" value="New" onclick="newentry();clearinnerhtml();"  <? if($usertype <> 'ADMIN') {  $classname = 'swiftchoicebuttondisabled'; ?> disabled="disabled" <? } else { $classname = 'swiftchoicebutton';} ?>  class="<? echo($classname); ?>" />
+                <td width="32%" height="35" align="right" valign="middle"><input name="new" type="reset" id="new" value="New" onclick="newentry();clearinnerhtml();"  <?php if($usertype <> 'ADMIN') {  $classname = 'swiftchoicebuttondisabled'; ?> disabled="disabled" <?php } else { $classname = 'swiftchoicebutton';} ?>  class="<?php echo($classname); ?>" />
 &nbsp;&nbsp;&nbsp;
-<input name="save" type="submit" id="save" value="Save" onclick="formsubmit('save')" <? if($usertype <> 'ADMIN') {  $classname = 'swiftchoicebuttondisabled'; ?> disabled="disabled" <? } else { $classname = 'swiftchoicebutton'; } ?>  class="<? echo($classname); ?>" />
+<input name="save" type="submit" id="save" value="Save" onclick="formsubmit('save')" <?php if($usertype <> 'ADMIN') {  $classname = 'swiftchoicebuttondisabled'; ?> disabled="disabled" <?php } else { $classname = 'swiftchoicebutton'; } ?>  class="<?php echo($classname); ?>" />
 &nbsp;&nbsp;&nbsp;
 <input name="delete" type="submit" class="swiftchoicebuttondisabled" id="delete" value="Delete"  onclick="formsubmit('delete')" disabled="disabled"/></td>
               </tr>
@@ -175,4 +175,4 @@ else
     </table></td>
   </tr>
 </table>
-<? } ?>
+<?php } ?>

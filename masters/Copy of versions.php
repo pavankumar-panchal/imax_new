@@ -1,4 +1,4 @@
-<?
+<?php
 if($usertype == 'GUEST')
 	header("location:../index.php");
 ?>
@@ -28,12 +28,12 @@ if($usertype == 'GUEST')
                       <td valign="top" bgcolor="#f7faff">Product Name:</td>
                       <td valign="top"><select name="productname" class="swiftselect" id="productname" onChange="prdshortformatinuseFunction();">
                       <option value="" selected>Make A Selection</option>
-                      <? include('../inc/productname.php'); ?>
+                      <?php include('../inc/productname.php'); ?>
                         </select>
                       <input type="hidden" name="lastslno" id="lastslno" value="" />
-                          <input type="hidden" name="loggeduser" id="loggeduser" value="<? echo($user); ?>"/>
-                          <input type="hidden" name="loggedusertype" id="loggedusertype" value="<? echo($usertype); ?>"/>
-                          <input type="hidden" name="loggedreportingauthority" id="loggedreportingauthority" value="<? echo($reportingauthority ); ?>"/></td>
+                          <input type="hidden" name="loggeduser" id="loggeduser" value="<?php echo($user); ?>"/>
+                          <input type="hidden" name="loggedusertype" id="loggedusertype" value="<?php echo($usertype); ?>"/>
+                          <input type="hidden" name="loggedreportingauthority" id="loggedreportingauthority" value="<?php echo($reportingauthority ); ?>"/></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top">Product Version:</td>

@@ -33,10 +33,10 @@ else
                         <input name="customername" type="text" class="swifttext" id="customername" size="30" readonly="readonly" value=""  autocomplete = "off" style="background:#FEFFE6;"/><a href="javascript:void(0);" onClick="getinvoiceregister(); getcustomerfunc();registernameload('receipt')" style="cursor:pointer"> 
                         <img src="../images/userid-bg.gif" width="14" height="16" border="0" align="absmiddle" /></a>
                         <input type="hidden" name="lastslno" id="lastslno" value="" />
-                        <input type="hidden" name="loggeduser" id="loggeduser" value="<? echo($user); ?>"/>
-                        <input type="hidden" name="loggedusertype" id="loggedusertype" value="<? echo($usertype); ?>"/>
-                        <input type="hidden" name="loggedreportingauthority" id="loggedreportingauthority" value="<? echo($reportingauthority ); ?>"/>
-                        <input type="hidden" name="hiddenserverdate" id="hiddenserverdate" value="<? echo(datetimelocal('d-m-Y')); ?>"/></td></tr>
+                        <input type="hidden" name="loggeduser" id="loggeduser" value="<?php echo($user); ?>"/>
+                        <input type="hidden" name="loggedusertype" id="loggedusertype" value="<?php echo($usertype); ?>"/>
+                        <input type="hidden" name="loggedreportingauthority" id="loggedreportingauthority" value="<?php echo($reportingauthority ); ?>"/>
+                        <input type="hidden" name="hiddenserverdate" id="hiddenserverdate" value="<?php echo(datetimelocal('d-m-Y')); ?>"/></td></tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top">Customer ID:</td>
                       <td valign="top">
@@ -55,12 +55,12 @@ else
                     <tr bgcolor="#f7faff">
                       <td valign="top">Date:</td>
                       <td valign="top">
-                        <input name="date" type="text" class="swifttext" id="date" size="30" maxlength="10" value="<? echo($localdate); ?>" readonly="readonly"  autocomplete="off" onBlur="this.value = datestringupdate(this.value)" style="background:#FEFFE6;"/>                      </td>
+                        <input name="date" type="text" class="swifttext" id="date" size="30" maxlength="10" value="<?php echo($localdate); ?>" readonly="readonly"  autocomplete="off" onBlur="this.value = datestringupdate(this.value)" style="background:#FEFFE6;"/>                      </td>
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top">Time:</td>
                       <td valign="top">
-                        <input name="time" type="text" class="swifttext" id="time" size="30" maxlength="10" value="<? echo($localtime); ?>" readonly="readonly"  autocomplete="off"  style="background:#FEFFE6;"/>                      </td>
+                        <input name="time" type="text" class="swifttext" id="time" size="30" maxlength="10" value="<?php echo($localtime); ?>" readonly="readonly"  autocomplete="off"  style="background:#FEFFE6;"/>                      </td>
                     </tr>
                     <tr bgcolor="#f7faff">
                       <td valign="top">Receipt Number:</td>
@@ -93,7 +93,7 @@ else
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top" bgcolor="#edf4ff">User ID:</td>
-                      <td valign="top"><input name="userid" type="text" class="swifttext" id="userid" size="30" readonly="readonly" value="<? echo($loggedusername); ?>"  autocomplete = "off" style="background:#FEFFE6;"/></td>
+                      <td valign="top"><input name="userid" type="text" class="swifttext" id="userid" size="30" readonly="readonly" value="<?php echo($loggedusername); ?>"  autocomplete = "off" style="background:#FEFFE6;"/></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top" bgcolor="#F7FAFF">Team Leader Remarks:</td>
@@ -186,7 +186,7 @@ else
                       <td valign="top">Entered By:</td>
                       <td valign="top"><select name="s_userid" id="s_userid" class="swiftselect">
                         <option value="" selected="selected">All</option>
-                        <? include('../inc/useridselection.php'); ?>
+                        <?php include('../inc/useridselection.php'); ?>
                       </select></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
@@ -298,7 +298,7 @@ Both</label></td>
   <tr>
     <td><div id="gc-form-error"></div></td>
   </tr>
-  <? include('../inc/receiptsregisterload.php'); ?>
+  <?php include('../inc/receiptsregisterload.php'); ?>
 </table>
 </div>
 
@@ -311,7 +311,7 @@ Both</label></td>
   <tr>
     <td><div id="gq-form-error"></div></td>
   </tr>
-  <? include('../inc/questionload.php'); ?>
+  <?php include('../inc/questionload.php'); ?>
 </table>
 </div>
-<? } ?>
+<?php } ?>

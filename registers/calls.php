@@ -1,4 +1,4 @@
-<?
+<?php
 $month = date('m'); 
 if($month >= '04')
    $date = '01-04-'.date('Y'); 
@@ -9,8 +9,8 @@ else
 }
 
 ?>
-<link rel="stylesheet" type="text/css" href="../style/main.css?dummy = <? echo (rand());?>">
-<script language="javascript" src="../functions/callregister.js?dummy = <? echo (rand());?>" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="../style/main.css?dummy = <?php echo (rand());?>">
+<script language="javascript" src="../functions/callregister.js?dummy = <?php echo (rand());?>" type="text/javascript"></script>
 <div id="contentdiv" style="display:block;">
 <table width="100%" border="0" cellspacing="0" cellpadding="4">
   <tr>
@@ -83,10 +83,10 @@ else
                      <span id="getcustomerlink" style="visibility:visible;">  <a href="javascript:void(0);" onclick="getcustomer(); getcustomerfunc(); registernameload('call')" style="cursor:pointer"> <img src="../images/userid-bg.gif" width="14" height="16" border="0" align="absmiddle" /></a></span>
                         <input type="hidden" name="lastslno" id="lastslno" value="" />
                         <input type="hidden" name="cusid" id="cusid" value="" />
-                          <input type="hidden" name="loggeduser" id="loggeduser" value="<? echo($user); ?>"/>
-                          <input type="hidden" name="loggedusertype" id="loggedusertype" value="<? echo($usertype); ?>"/>
+                          <input type="hidden" name="loggeduser" id="loggeduser" value="<?php echo($user); ?>"/>
+                          <input type="hidden" name="loggedusertype" id="loggedusertype" value="<?php echo($usertype); ?>"/>
                           <input type="hidden" name="endtime" id="endtime" value=""/>
-                          <input type="hidden" name="loggedreportingauthority" id="loggedreportingauthority" value="<? echo($reportingauthoritytype ); ?>"/><input type="hidden" name="hiddenserverdate" id="hiddenserverdate" value="<? echo(datetimelocal('d-m-Y')); ?>"/></td>
+                          <input type="hidden" name="loggedreportingauthority" id="loggedreportingauthority" value="<?php echo($reportingauthoritytype ); ?>"/><input type="hidden" name="hiddenserverdate" id="hiddenserverdate" value="<?php echo(datetimelocal('d-m-Y')); ?>"/></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top" bgcolor="#F7FAFF">Customer ID:</td>
@@ -94,11 +94,11 @@ else
                     </tr>
                     <tr bgcolor="#f7faff">
                       <td valign="top" bgcolor="#EDF4FF">Date:</td>
-                      <td valign="top" bgcolor="#EDF4FF"><input name="date" type="text" class="swifttext" id="date" size="30" autocomplete="off" readonly="readonly" style="background:#FEFFE6;" value="<? echo(datetimelocal('d-m-Y')); ?>" /></td>
+                      <td valign="top" bgcolor="#EDF4FF"><input name="date" type="text" class="swifttext" id="date" size="30" autocomplete="off" readonly="readonly" style="background:#FEFFE6;" value="<?php echo(datetimelocal('d-m-Y')); ?>" /></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top" bgcolor="#F7FAFF">Time:</td>
-                      <td valign="top" bgcolor="#F7FAFF"><input name="time" type="text" class="swifttext" id="time" size="30" autocomplete="off" readonly="readonly" style="background:#FEFFE6;" value="<? echo(datetimelocal('H:i:s')); ?>" /></td>
+                      <td valign="top" bgcolor="#F7FAFF"><input name="time" type="text" class="swifttext" id="time" size="30" autocomplete="off" readonly="readonly" style="background:#FEFFE6;" value="<?php echo(datetimelocal('H:i:s')); ?>" /></td>
                     </tr>
                     <tr bgcolor="#f7faff">
                       <td valign="top" bgcolor="#EDF4FF">Category:</td>
@@ -109,7 +109,7 @@ else
                       <td valign="top" bgcolor="#F7FAFF">
                           <select name="state" id="state" class="swiftselect" autocomplete="off" disabled="disabled" style="background:#FEFFE6;"  >
                           
-                             <? include('../inc/state.php'); ?>
+                             <?php include('../inc/state.php'); ?>
                           </select>
                       </td>
                     </tr>
@@ -121,7 +121,7 @@ else
                     <tr bgcolor="#edf4ff">
                             <td valign="top" bgcolor="#F7FAFF">Product group:</td>
                                 <td valign="top" bgcolor="#F7FAFF">
-                                    <? include('../inc/productgroup.php');  
+                                    <?php include('../inc/productgroup.php');  
 					   				   productname('productgroup','');
 									?>
                                 </td>
@@ -164,7 +164,7 @@ else
                     <tr bgcolor="#f7faff">
                       <td valign="top">Call Category:</td>
                       <td valign="top"><select name="callcategory" id="callcategory" class="swiftselect">
-                         <? include('../inc/callcategory.php'); ?>
+                         <?php include('../inc/callcategory.php'); ?>
                       </select></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
@@ -178,7 +178,7 @@ else
                       <td valign="top" bgcolor="#f7faff">Transferred to:</td>
                       <td valign="top" bgcolor="#f7faff"><select name="transferredto" id="transferredto" class="swiftselect">
                         <option value="none" selected="selected">None</option>
-                        <? include('../inc/useridselection.php'); ?>
+                        <?php include('../inc/useridselection.php'); ?>
                         <option value="registration">Registration Department</option>
                         <option value="others">Others</option>
                       </select></td>
@@ -241,11 +241,11 @@ else
                 <td width="50%" valign="top" style="border-right:1px solid #d1dceb;"><table width="100%" border="0" cellspacing="0" cellpadding="3">
                     <tr bgcolor="#f7faff">
                       <td valign="top">From Date:</td>
-                      <td valign="top"><input name="fromdate" type="text" class="swifttext" id="DPC_fromdate" size="30" autocomplete="off"  readonly="readonly" style="background:#FEFFE6;" value="<? echo($date); ?>" /></td>
+                      <td valign="top"><input name="fromdate" type="text" class="swifttext" id="DPC_fromdate" size="30" autocomplete="off"  readonly="readonly" style="background:#FEFFE6;" value="<?php echo($date); ?>" /></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top">To Date:</td>
-                      <td valign="top"><input name="todate" type="text" class="swifttext" id="DPC_todate" size="30" autocomplete="off"  style="background:#FEFFE6;"  value="<?  echo(datetimelocal('d-m-Y')); ?>"  /></td>
+                      <td valign="top"><input name="todate" type="text" class="swifttext" id="DPC_todate" size="30" autocomplete="off"  style="background:#FEFFE6;"  value="<?php  echo(datetimelocal('d-m-Y')); ?>"  /></td>
                     </tr>
                      <tr bgcolor="#EDF4FF">
                       <td valign="top">Call Type:</td>
@@ -292,7 +292,7 @@ else
                       <td valign="top" bgcolor="#EDF4FF">State:</td>
                       <td valign="top" bgcolor="#EDF4FF">
                           <select name="s_state" id="s_state" class="swiftselect" >
-                             <? include('../inc/state.php'); ?>
+                             <?php include('../inc/state.php'); ?>
                           </select>
                       </td>
                     </tr>
@@ -313,7 +313,7 @@ Dealers</label>
                               <td valign="top" bgcolor="#EDF4FF">Product group:</td>
                               <td valign="top" bgcolor="#EDF4FF">
                                 <span id="filterprdgroupdisplay">
-								<?  productname('s_productgroup','');?>
+								<?php  productname('s_productgroup','');?>
                               <!-- Details are in javascript.js page as a function prdgroup();-->
                                </span>
                                </td>
@@ -322,7 +322,7 @@ Dealers</label>
                       <td valign="top" bgcolor="#EDF4FF">Product Name:</td>
                       <td valign="top" bgcolor="#EDF4FF"><select name="s_productname" class="swiftselect" id="s_productname">
                         <option value="">All</option>
-                      <? include('../inc/productfilter.php'); ?>
+                      <?php include('../inc/productfilter.php'); ?>
                       </select></td>
                     </tr>
                 </table></td>
@@ -345,7 +345,7 @@ Dealers</label>
                       <td valign="top">Call Category:</td>
                       <td valign="top"><select name="s_callcategory" id="s_callcategory" class="swiftselect">
                        <option value="" selected="selected">All</option>
-                        <? include('../inc/callcategory.php'); ?>
+                        <?php include('../inc/callcategory.php'); ?>
                       </select></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
@@ -353,7 +353,7 @@ Dealers</label>
                       <td valign="top"><select name="s_transferredto" id="s_transferredto" class="swiftselect">
                         <option value="" selected="selected">All</option>
                         <option value="none" selected="selected">None</option>
-                        <? include('../inc/useridselection.php'); ?>
+                        <?php include('../inc/useridselection.php'); ?>
                         <option value="registration">Registration Department</option>
                         <option value="others">Others</option>
                       </select></td>
@@ -362,7 +362,7 @@ Dealers</label>
                       <td valign="top">Entered By:</td>
                       <td valign="top"><select name="s_userid" id="s_userid" class="swiftselect">
                         <option value="" selected="selected">All</option>
-                        <? include('../inc/useridselection.php'); ?>
+                        <?php include('../inc/useridselection.php'); ?>
                       </select></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
@@ -384,7 +384,7 @@ No</label>
                       <td valign="top">Support Unit:</td>
                       <td valign="top"><select name="s_supportunit" class="swiftselect" id="s_supportunit"  >
                         <option value="">ALL</option>
-                        <? include('../inc/supportunit.php'); ?>
+                        <?php include('../inc/supportunit.php'); ?>
                       </select></td>
                     </tr>
                     <tr bgcolor="#F7FAFF">
@@ -496,7 +496,7 @@ No</label>
   <tr>
     <td><div id="gc-form-error"></div></td>
   </tr>
-  <? include('../inc/nameload.php'); ?>
+  <?php include('../inc/nameload.php'); ?>
 </table>
 </div>
 
@@ -509,6 +509,6 @@ No</label>
   <tr>
     <td><div id="gq-form-error"></div></td>
   </tr>
-  <? include('../inc/questionload.php'); ?>
+  <?php include('../inc/questionload.php'); ?>
 </table>
 </div>

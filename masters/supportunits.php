@@ -1,11 +1,11 @@
-<?
+<?php
 if($usertype <> 'TEAMLEADER' && $usertype <> 'ADMIN' && $usertype <> 'MANAGEMENT')
 	header("location:../index.php");
 else
 {
 ?>
-<link rel="stylesheet" type="text/css" href="../style/main.css?dummy = <? echo (rand());?>">
-<script language="javascript" src="../functions/supportunitmaster.js?dummy = <? echo (rand());?>" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="../style/main.css?dummy = <?php echo (rand());?>">
+<script language="javascript" src="../functions/supportunitmaster.js?dummy = <?php echo (rand());?>" type="text/javascript"></script>
 <table width="100%" border="0" cellspacing="0" cellpadding="4">
   <tr>
     <td class="content-header">Masters > Support Units</td>
@@ -29,9 +29,9 @@ else
                       <td valign="top">Support Unit  Heading:</td>
                       <td valign="top"><input name="heading" type="text" class="swifttext" id="heading" size="50" />
                       <input type="hidden" name="lastslno" id="lastslno" value="" />
-                          <input type="hidden" name="loggeduser" id="loggeduser" value="<? echo($user); ?>"/>
-                          <input type="hidden" name="loggedusertype" id="loggedusertype" value="<? echo($usertype); ?>"/>
-                          <input type="hidden" name="loggedreportingauthority" id="loggedreportingauthority" value="<? echo($reportingauthority ); ?>"/></td>
+                          <input type="hidden" name="loggeduser" id="loggeduser" value="<?php echo($user); ?>"/>
+                          <input type="hidden" name="loggedusertype" id="loggedusertype" value="<?php echo($usertype); ?>"/>
+                          <input type="hidden" name="loggedreportingauthority" id="loggedreportingauthority" value="<?php echo($reportingauthority ); ?>"/></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top">Remarks:</td>
@@ -149,4 +149,4 @@ else
     </table></td>
   </tr>
 </table>
-<? } ?>
+<?php } ?>

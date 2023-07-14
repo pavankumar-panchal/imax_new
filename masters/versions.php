@@ -1,11 +1,11 @@
-<?
+<?php
 if($usertype == 'GUEST')
 	header("location:../index.php");
 else
 {
 ?>
-<link rel="stylesheet" type="text/css" href="../style/main.css?dummy = <? echo (rand());?>">
-<script language="javascript" src="../functions/versionmaster.js?dummy = <? echo (rand());?>" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="../style/main.css?dummy = <?php echo (rand());?>">
+<script language="javascript" src="../functions/versionmaster.js?dummy = <?php echo (rand());?>" type="text/javascript"></script>
 
 <table width="100%" border="0" cellspacing="0" cellpadding="4">
   <tr>
@@ -30,7 +30,7 @@ else
                               <td valign="top" bgcolor="#EDF4FF">Product group:</td>
                               <td valign="top" bgcolor="#EDF4FF">
                                 <span id="filterprdgroupdisplay">
-								<?  include('../inc/productgroup.php');  
+								<?php  include('../inc/productgroup.php');  
 								productname('s_productgroup','');?>
                               <!-- Details are in javascript.js page as a function prdgroup();-->
                                </span>
@@ -40,12 +40,12 @@ else
                       <td valign="top" bgcolor="#f7faff">Product Name:</td>
                       <td valign="top"><select name="productname" class="swiftselect" id="productname">
                       <option value="" selected>Make A Selection</option>
-                      <? include('../inc/productfilter.php'); ?>
+                      <?php include('../inc/productfilter.php'); ?>
                         </select>
                       <input type="hidden" name="lastslno" id="lastslno" value="" />
-                          <input type="hidden" name="loggeduser" id="loggeduser" value="<? echo($user); ?>"/>
-                          <input type="hidden" name="loggedusertype" id="loggedusertype" value="<? echo($usertype); ?>"/>
-                          <input type="hidden" name="loggedreportingauthority" id="loggedreportingauthority" value="<? echo($reportingauthority ); ?>"/></td>
+                          <input type="hidden" name="loggeduser" id="loggeduser" value="<?php echo($user); ?>"/>
+                          <input type="hidden" name="loggedusertype" id="loggedusertype" value="<?php echo($usertype); ?>"/>
+                          <input type="hidden" name="loggedreportingauthority" id="loggedreportingauthority" value="<?php echo($reportingauthority ); ?>"/></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top">Product Version:</td>
@@ -62,9 +62,9 @@ else
                 <td align="right" valign="middle" style="padding-right:15px; border-top:1px solid #d1dceb;"><table width="100%" border="0" cellspacing="0" cellpadding="0" height="35">
   <tr>
                 <td width="68%" height="35" align="left" valign="middle"><div id="form-error"></div></td>
-                <td width="32%" height="35" align="right" valign="middle"><input name="new" type="reset" <? if($usertype <> 'ADMIN' && $usertype <> 'MANAGEMENT' && $usertype <> 'TEAMLEADER') { $class = 'swiftchoicebuttondisabled'; ?> disabled="disabled"<? } else { $class='swiftchoicebutton'; ?>  <? } ?> class="<? echo($class); ?>" id="new" value="New" onclick="newentry();clearinnerhtml(); " />
+                <td width="32%" height="35" align="right" valign="middle"><input name="new" type="reset" <?php if($usertype <> 'ADMIN' && $usertype <> 'MANAGEMENT' && $usertype <> 'TEAMLEADER') { $class = 'swiftchoicebuttondisabled'; ?> disabled="disabled"<?php } else { $class='swiftchoicebutton'; ?>  <?php } ?> class="<?php echo($class); ?>" id="new" value="New" onclick="newentry();clearinnerhtml(); " />
 &nbsp;&nbsp;&nbsp;
-<input name="save" type="submit" <? if($usertype <> 'ADMIN' && $usertype <> 'MANAGEMENT' && $usertype <> 'TEAMLEADER') { $class = 'swiftchoicebuttondisabled'; ?> disabled="disabled"<? } else { $class='swiftchoicebutton'; ?>  <? } ?> class="<? echo($class); ?>"users	 id="save" value="Save" onclick="formsubmit('save')" />
+<input name="save" type="submit" <?php if($usertype <> 'ADMIN' && $usertype <> 'MANAGEMENT' && $usertype <> 'TEAMLEADER') { $class = 'swiftchoicebuttondisabled'; ?> disabled="disabled"<?php } else { $class='swiftchoicebutton'; ?>  <?php } ?> class="<?php echo($class); ?>"users	 id="save" value="Save" onclick="formsubmit('save')" />
 &nbsp;&nbsp;&nbsp;
 <input name="delete" type="submit" class="swiftchoicebuttondisabled" id="delete" value="Delete"  onclick="formsubmit('delete')" disabled="disabled"/></td>
               </tr>
@@ -103,7 +103,7 @@ else
                         </div>
                         <div id="groupname" style="display:none">
                         	<span id="filterprdgroupdisplay">
-								<?  
+								<?php  
 								productname('s_productgroup','');?>
                               <!-- Details are in javascript.js page as a function prdgroup();-->
                                </span>
@@ -203,4 +203,4 @@ else
     </table></td>
   </tr>
 </table>
-<? } ?>
+<?php } ?>

@@ -1,4 +1,4 @@
-<?
+<?php
 if($usertype <> 'TEAMLEADER' && $usertype <> 'MANAGEMENT' && $usertype <> 'ADMIN')
 	header("location:../index.php");
 	
@@ -25,8 +25,8 @@ $receipts = $fetch9['count'];
 
 $total = $calls + $emails + $errors + $inhouse + $onsite + $references + $requirements + $skype + $invoices + $receipts;
 ?>
-<link rel="stylesheet" type="text/css" href="../style/main.css?dummy = <? echo (rand());?>">
-<script language="javascript" src="../functions/recordauthorization.js?dummy = <? echo (rand());?>" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="../style/main.css?dummy = <?php echo (rand());?>">
+<script language="javascript" src="../functions/recordauthorization.js?dummy = <?php echo (rand());?>" type="text/javascript"></script>
 <table width="100%" border="0" cellspacing="0" cellpadding="4">
   <tr>
     <td class="content-header">Masters > Record Authorization</td>
@@ -37,7 +37,7 @@ $total = $calls + $emails + $errors + $inhouse + $onsite + $references + $requir
   <tr>
     <td style="padding:0"><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border:1px solid #6393df; border-top:none">
         <tr style="cursor:pointer" onClick="showhide('pendingauthorization','toggleimg');">
-        <td class="header-line" style="padding:0">&nbsp;&nbsp;Authorization Summary - You have <strong><? echo($total); ?></strong> Records Pending for Authorization</td>
+        <td class="header-line" style="padding:0">&nbsp;&nbsp;Authorization Summary - You have <strong><?php echo($total); ?></strong> Records Pending for Authorization</td>
         <td align="right" class="header-line" style="padding-right:7px"><div align="right"><img src="../images/minus.jpg" border="0" id="toggleimg" name="toggleimg"  align="absmiddle" /></div></td>
       </tr>
         <tr>
@@ -48,45 +48,45 @@ $total = $calls + $emails + $errors + $inhouse + $onsite + $references + $requir
                     <td width="50%" valign="top" style="border-right:1px solid #d1dceb;"><table width="100%" border="0" cellspacing="0" cellpadding="3">
                         <tr bgcolor="#f7faff">
                           <td valign="top">Calls:</td>
-                          <td valign="top"><? echo($calls); ?></td>
+                          <td valign="top"><?php echo($calls); ?></td>
                         </tr>
                         <tr bgcolor="#edf4ff">
                           <td valign="top">Emails:</td>
-                          <td valign="top"><? echo($emails); ?></td>
+                          <td valign="top"><?php echo($emails); ?></td>
                         </tr>
                         <tr bgcolor="#f7faff">
                           <td valign="top">Errors:</td>
-                          <td valign="top"><? echo($errors); ?></td>
+                          <td valign="top"><?php echo($errors); ?></td>
                         </tr>
                         <tr bgcolor="#edf4ff">
                           <td valign="top">Inhouse:</td>
-                          <td valign="top"><? echo($inhouse); ?></td>
+                          <td valign="top"><?php echo($inhouse); ?></td>
                         </tr>
                         <tr bgcolor="#f7faff">
                           <td valign="top">Onsite:</td>
-                          <td valign="top"><? echo($onsite); ?></td>
+                          <td valign="top"><?php echo($onsite); ?></td>
                         </tr>
                     </table></td>
                     <td width="50%" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="3">
                         <tr bgcolor="#f7faff">
                           <td valign="top">Reference:</td>
-                          <td valign="top"><? echo($references); ?></td>
+                          <td valign="top"><?php echo($references); ?></td>
                         </tr>
                         <tr bgcolor="#edf4ff">
                           <td valign="top">Requirement:</td>
-                          <td valign="top"><? echo($requirements); ?></td>
+                          <td valign="top"><?php echo($requirements); ?></td>
                         </tr>
                         <tr bgcolor="#f7faff">
                           <td valign="top">Skype:</td>
-                          <td valign="top"><? echo($skype); ?></td>
+                          <td valign="top"><?php echo($skype); ?></td>
                         </tr>
                         <tr bgcolor="#edf4ff">
                           <td valign="top">Invoice:</td>
-                          <td valign="top"><? echo($invoices); ?></td>
+                          <td valign="top"><?php echo($invoices); ?></td>
                         </tr>
                         <tr bgcolor="#f7faff">
                           <td valign="top">Receipts:</td>
-                          <td valign="top"><? echo($receipts); ?></td>
+                          <td valign="top"><?php echo($receipts); ?></td>
                         </tr>
                     </table></td>
                   </tr>
@@ -119,7 +119,7 @@ $total = $calls + $emails + $errors + $inhouse + $onsite + $references + $requir
                           <td valign="top">Category:</td>
                           <td valign="top"><select name="authorizedgroup" class="swiftselect" id="authorizedgroup">
                             <option value="" selected="selected">Make A Selection</option>
-                            <? include('../inc/authorizinggroup.php'); ?>
+                            <?php include('../inc/authorizinggroup.php'); ?>
                           </select></td>
                         </tr>
                         <tr bgcolor="#edf4ff">
@@ -157,9 +157,9 @@ No</label></td>
                           <td valign="top"><textarea name="teamleaderremarks" cols="45" class="swifttextarea" id="teamleaderremarks"></textarea>
                             <input type="hidden" name="lastslno" id="lastslno" value="" />
                             <input type="hidden" name="registervalue" id="registervalue" value="" /></td>
-                            <input type="hidden" name="loggedusertype" id="loggedusertype" value="<? echo($usertype); ?>"/>
-                            <input type="hidden" name="loggeduser" id="loggeduser" value="<? echo($user); ?>"/>
-                            <input type="hidden" name="loggedreportingauthority" id="loggedreportingauthority" value="<? echo($reportingauthoritytype ); ?>"/>
+                            <input type="hidden" name="loggedusertype" id="loggedusertype" value="<?php echo($usertype); ?>"/>
+                            <input type="hidden" name="loggeduser" id="loggeduser" value="<?php echo($user); ?>"/>
+                            <input type="hidden" name="loggedreportingauthority" id="loggedreportingauthority" value="<?php echo($reportingauthoritytype ); ?>"/>
                         </tr>
                         
 
@@ -204,11 +204,11 @@ No</label></td>
                 <td width="50%" valign="top" style="border-right:1px solid #d1dceb;"><table width="100%" border="0" cellspacing="0" cellpadding="3">
                     <tr bgcolor="#f7faff">
                       <td valign="top">From Date:</td>
-                      <td valign="top"><input name="fromdate" type="text" class="swifttext" id="DPC_fromdate" size="30" autocomplete="off"  style="background:#FEFFE6;" value="<? datetimelocal('d-m-Y'); ?>"/></td>
+                      <td valign="top"><input name="fromdate" type="text" class="swifttext" id="DPC_fromdate" size="30" autocomplete="off"  style="background:#FEFFE6;" value="<?php datetimelocal('d-m-Y'); ?>"/></td>
                     </tr>
                     <tr bgcolor="#f7faff">
                       <td valign="top">To Date:</td>
-                      <td valign="top"><input name="todate" type="text" class="swifttext" id="DPC_todate" size="30" autocomplete="off"   style="background:#FEFFE6;"  value="<? datetimelocal('d-m-Y'); ?>" /></td>
+                      <td valign="top"><input name="todate" type="text" class="swifttext" id="DPC_todate" size="30" autocomplete="off"   style="background:#FEFFE6;"  value="<?php datetimelocal('d-m-Y'); ?>" /></td>
                     </tr>
                     <tr bgcolor="#f7faff">
                       <td valign="top">Customer Name:</td>
@@ -262,7 +262,7 @@ Both</label></td>
                       <td valign="top"><select name="s_transferredto" id="s_transferredto" class="swiftselect">
                         <option value="" selected="selected">All</option>
                         <option value="none" selected="selected">None</option>
-                        <? include('../inc/useridselection.php'); ?>
+                        <?php include('../inc/useridselection.php'); ?>
                         <option value="registration">Registration Department</option>
                         <option value="others">Others</option>
                       </select></td>
@@ -286,14 +286,14 @@ Both </label></td>
                       <td valign="top">Entered By:</td>
                       <td valign="top"><select name="s_userid" id="s_userid" class="swiftselect">
                         <option value="" selected="selected">All</option>
-                        <? include('../inc/useridselectionreports.php'); ?>
+                        <?php include('../inc/useridselectionreports.php'); ?>
                       </select></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
                               <td valign="top" bgcolor="#EDF4FF">Product group:</td>
                               <td valign="top" bgcolor="#EDF4FF">
                                 <span id="filterprdgroupdisplay">
-								<? include('../inc/productgroup.php');  
+								<?php include('../inc/productgroup.php');  
 								 productname('s_productgroup','');?>
                               <!-- Details are in javascript.js page as a function prdgroup();-->
                                </span>
@@ -303,7 +303,7 @@ Both </label></td>
                       <td valign="top" bgcolor="#EDF4FF">Product Name:</td>
                       <td valign="top" bgcolor="#EDF4FF"><select name="s_productname" class="swiftselect" id="s_productname">
                         <option value="">All</option>
-                      <? include('../inc/productfilter.php'); ?>
+                      <?php include('../inc/productfilter.php'); ?>
                       </select></td>
                     </tr>
                     
@@ -311,7 +311,7 @@ Both </label></td>
                       <td valign="top">Product Name:</td>
                       <td valign="top"><select name="s_productname" class="swiftselect" id="s_productname">
                         <option value="">All</option>
-                        /*<?/*include('../inc/productname.php');*/?>*/
+                        /*<?php/*include('../inc/productname.php');*/?>*/
                       </select></td>
                     </tr>-->
                     <tr bgcolor="#f7faff">
@@ -322,7 +322,7 @@ Both </label></td>
                       <td valign="top">Support Unit:</td>
                       <td valign="top"><select name="s_supportunit" class="swiftselect" id="s_supportunit">
                         <option value="">ALL</option>
-                        <? include('../inc/supportunit.php'); ?>
+                        <?php include('../inc/supportunit.php'); ?>
                       </select></td>
                     </tr>
                    <tr bgcolor="#f7faff">

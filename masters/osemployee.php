@@ -1,11 +1,11 @@
-<?
+<?php
 if($usertype <> 'TEAMLEADER' && $usertype <> 'ADMIN' && $usertype <> 'MANAGEMENT')
 	header("location:../index.php");
 else
 {
 ?>
-<link rel="stylesheet" type="text/css" href="../style/main.css?dummy = <? echo (rand());?>">
-<script language="javascript" src="../functions/osmaster.js?dummy = <? echo (rand());?>" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="../style/main.css?dummy = <?php echo (rand());?>">
+<script language="javascript" src="../functions/osmaster.js?dummy = <?php echo (rand());?>" type="text/javascript"></script>
 <table width="100%" border="0" cellspacing="0" cellpadding="4">
   <tr>
     <td class="content-header">Masters > Out Station Employees</td>
@@ -29,9 +29,9 @@ else
                       <td valign="top">Business Name:</td>
                       <td valign="top"><input name="oscompanyname" type="text" class="swifttext" id="oscompanyname" size="30" />
                       <input type="hidden" name="lastslno" id="lastslno" value="" />
-                          <input type="hidden" name="loggeduser" id="loggeduser" value="<? echo($user); ?>"/>
-                          <input type="hidden" name="loggedusertype" id="loggedusertype" value="<? echo($usertype); ?>"/>
-                          <input type="hidden" name="loggedreportingauthority" id="loggedreportingauthority" value="<? echo($reportingauthority ); ?>"/></td>
+                          <input type="hidden" name="loggeduser" id="loggeduser" value="<?php echo($user); ?>"/>
+                          <input type="hidden" name="loggedusertype" id="loggedusertype" value="<?php echo($usertype); ?>"/>
+                          <input type="hidden" name="loggedreportingauthority" id="loggedreportingauthority" value="<?php echo($reportingauthority ); ?>"/></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top">Employee Name:</td>
@@ -54,7 +54,7 @@ else
                     <tr bgcolor="#f7faff">
                       <td valign="top">Category:</td>
                       <td valign="top"><select name="category" id="category" class="swiftselect">
-                        <? include('../inc/category.php'); ?>
+                        <?php include('../inc/category.php'); ?>
                       </select></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
@@ -213,4 +213,4 @@ EmailID</label>
     </table></td>
   </tr>
 </table>
-<? } ?>
+<?php } ?>

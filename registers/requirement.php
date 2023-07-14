@@ -1,4 +1,4 @@
-<?
+<?php
 	$month = date('m'); 
 	if($month >= '04')
 	$date = '01-04-'.date('Y'); 
@@ -8,8 +8,8 @@
 	$date = '01-04-'.$year; //echo($date);
 	}
 ?>
-<link rel="stylesheet" type="text/css" href="../style/main.css?dummy = <? echo (rand());?>">
-<script language="javascript" src="../functions/requirementregister.js?dummy = <? echo (rand());?>" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="../style/main.css?dummy = <?php echo (rand());?>">
+<script language="javascript" src="../functions/requirementregister.js?dummy = <?php echo (rand());?>" type="text/javascript"></script>
 <div id="contentdiv" style="display:block;">
   <table width="100%" border="0" cellspacing="0" cellpadding="4">
     <tr>
@@ -46,35 +46,35 @@
                               <input name="customername" type="text" class="swifttext" id="customername" size="30" autocomplete="off" readonly="readonly"  style="background:#FEFFE6;" />
                             <span id="getcustomerlink" style="visibility:visible;">  <a href="javascript:void(0);" onClick="getcustomer(); getcustomerfunc();registernameload('requirement')" style="cursor:pointer"><img src="../images/userid-bg.gif" width="14" height="16" border="0" align="absmiddle" /></a></span>
                               <input type="hidden" name="lastslno" id="lastslno" value="" />
-                              <input type="hidden" name="loggeduser" id="loggeduser" value="<? echo($user); ?>"/>
-                              <input type="hidden" name="loggedusertype" id="loggedusertype" value="<? echo($usertype); ?>"/>
-                              <input type="hidden" name="loggedreportingauthority" id="loggedreportingauthority" value="<? echo($reportingauthority ); ?>"/>
-                              <input type="hidden" name="hiddenserverdate" id="hiddenserverdate" value="<? echo(datetimelocal('d-m-Y')); ?>"/>
+                              <input type="hidden" name="loggeduser" id="loggeduser" value="<?php echo($user); ?>"/>
+                              <input type="hidden" name="loggedusertype" id="loggedusertype" value="<?php echo($usertype); ?>"/>
+                              <input type="hidden" name="loggedreportingauthority" id="loggedreportingauthority" value="<?php echo($reportingauthority ); ?>"/>
+                              <input type="hidden" name="hiddenserverdate" id="hiddenserverdate" value="<?php echo(datetimelocal('d-m-Y')); ?>"/>
                               <input type="hidden" name="customerid" id="customerid" value=""/>
                               <input type="hidden" name="requirementreportgrid" id="requirementreportgrid" value=""/>
                             </label></td>
                           </tr>
                           <tr bgcolor="#f7faff">
                             <td valign="top">Date:</td>
-                            <td valign="top"><input name="date" type="text" class="swifttext" id="date" size="30" autocomplete="off" readonly="readonly" style="background:#FEFFE6;" value="<? echo($localdate); ?>" /></td>
+                            <td valign="top"><input name="date" type="text" class="swifttext" id="date" size="30" autocomplete="off" readonly="readonly" style="background:#FEFFE6;" value="<?php echo($localdate); ?>" /></td>
                           </tr>
                           <tr bgcolor="#edf4ff">
                             <td valign="top">Time:</td>
                             <td valign="top">
-                              <input name="time" type="text" class="swifttext" id="time" size="30" autocomplete="off" readonly="readonly" value="<? echo($localtime); ?>" style="background:#FEFFE6;"  /></td>
+                              <input name="time" type="text" class="swifttext" id="time" size="30" autocomplete="off" readonly="readonly" value="<?php echo($localtime); ?>" style="background:#FEFFE6;"  /></td>
                           </tr>
                           <tr bgcolor="#f7faff">
                               <td valign="top">State:</td>
                               <td valign="top">
                                   <select name="state" id="state" class="swiftselect" autocomplete="off" disabled="disabled" style="background:#FEFFE6;"  >
-                                     <? include('../inc/state.php'); ?>
+                                     <?php include('../inc/state.php'); ?>
                                   </select>
                               </td>
                             </tr>
                             <tr bgcolor="#edf4ff">
                               <td valign="top">Product group:</td>
                               <td valign="top">
-                                  <? include('../inc/productgroup.php');  
+                                  <?php include('../inc/productgroup.php');  
 					   				 productname('productgroup','');
 								  ?>
                                </td>
@@ -139,7 +139,7 @@
                           </tr>
                           <tr bgcolor="#edf4ff">
                             <td valign="top" bgcolor="#F7FAFF">Entered By:</td>
-                            <td valign="top" bgcolor="#F7FAFF"><input name="userid" type="text" class="swifttext" id="userid" size="30" readonly="readonly" value="<? echo($loggedusername); ?>" style="background:#FEFFE6;"  autocomplete = "off"/></td>
+                            <td valign="top" bgcolor="#F7FAFF"><input name="userid" type="text" class="swifttext" id="userid" size="30" readonly="readonly" value="<?php echo($loggedusername); ?>" style="background:#FEFFE6;"  autocomplete = "off"/></td>
                           </tr>
                           <tr bgcolor="#f7faff">
                             <td valign="top" bgcolor="#EDF4FF">Requirement ID:</td>
@@ -193,12 +193,12 @@
                       <td width="50%" valign="top" style="border-right:1px solid #d1dceb;"><table width="100%" border="0" cellspacing="0" cellpadding="3">
                           <tr bgcolor="#f7faff">
                             <td valign="top">From Date:</td>
-                            <td valign="top"><input name="fromdate" type="text" class="swifttext" id="DPC_fromdate" size="30" autocomplete="off"  style="background:#FEFFE6;" value="<? echo($date); ?>" /></td>
+                            <td valign="top"><input name="fromdate" type="text" class="swifttext" id="DPC_fromdate" size="30" autocomplete="off"  style="background:#FEFFE6;" value="<?php echo($date); ?>" /></td>
                           </tr>
                           <tr bgcolor="#edf4ff">
                             <td valign="top">To Date:</td>
                             <td valign="top"><label></label><label>
-                            <input name="todate" type="text" class="swifttext" id="DPC_todate" size="30" autocomplete="off" style="background:#FEFFE6;" value="<?  echo(datetimelocal('d-m-Y')); ?>" />
+                            <input name="todate" type="text" class="swifttext" id="DPC_todate" size="30" autocomplete="off" style="background:#FEFFE6;" value="<?php  echo(datetimelocal('d-m-Y')); ?>" />
                             </label></td>
                           </tr>
                           <tr bgcolor="#f7faff">
@@ -226,7 +226,7 @@
                               <td valign="top" bgcolor="#EDF4FF">State:</td>
                               <td valign="top" bgcolor="#EDF4FF">
                                   <select name="s_state" id="s_state" class="swiftselect" >
-                                     <? include('../inc/state.php'); ?>
+                                     <?php include('../inc/state.php'); ?>
                                   </select>
                               </td>
                             </tr>
@@ -234,7 +234,7 @@
                               <td valign="top" bgcolor="#EDF4FF">Product group:</td>
                               <td valign="top" bgcolor="#EDF4FF">
                                 <span id="filterprdgroupdisplay">
-								<?  productname('s_productgroup','');?>
+								<?php  productname('s_productgroup','');?>
                               <!-- Details are in javascript.js page as a function prdgroup();-->
                                </span>
                                </td>
@@ -243,7 +243,7 @@
                               <td valign="top" bgcolor="#EDF4FF">Product Name:</td>
                               <td valign="top" bgcolor="#EDF4FF"><select name="s_productname" class="swiftselect" id="s_productname">
                                 <option value="">All</option>
-                              <? include('../inc/productfilter.php'); ?>
+                              <?php include('../inc/productfilter.php'); ?>
                               </select></td>
                             </tr>
                           <tr bgcolor="#f7faff">
@@ -280,7 +280,7 @@
                             <td valign="top">Entered By:</td>
                             <td valign="top"><select name="s_userid" id="s_userid" class="swiftselect">
                               <option value="" selected="selected">All</option>
-                              <? include('../inc/useridselection.php'); ?>
+                              <?php include('../inc/useridselection.php'); ?>
                             </select></td>
                           </tr>
                           <tr bgcolor="#f7faff">
@@ -301,7 +301,7 @@ No</label><label><input type="radio" name="flagdatabasefield" id="flagdatabasefi
                             <td valign="top" bgcolor="#F7FAFF">Support Unit:</td>
                             <td valign="top" bgcolor="#F7FAFF"><select name="s_supportunit" class="swiftselect" id="s_supportunit"  onchange="javascript: useronsupportunit('assignedto');">
                               <option value="">ALL</option>
-                              <? include('../inc/supportunit.php'); ?>
+                              <?php include('../inc/supportunit.php'); ?>
                             </select></td>
                           </tr>
                           <tr bgcolor="#edf4ff">
@@ -402,13 +402,13 @@ No</label><label><input type="radio" name="flagdatabasefield" id="flagdatabasefi
   <table width="100%" border="0" cellspacing="0" cellpadding="4">
     <tr> <td class="content-header">Call Register > Get Customer</td> </tr>
     <tr> <td><div id="gc-form-error"></div></td> </tr>
-    <? include('../inc/nameload.php'); ?>
+    <?php include('../inc/nameload.php'); ?>
   </table>
 </div>
 <div id="questionload" style="display:none;">
   <table width="100%" border="0" cellspacing="0" cellpadding="4">
     <tr> <td class="content-header">Email Register > Get Problems and Solutions</td> </tr>
     <tr> <td><div id="gq-form-error"></div></td> </tr>
-    <? include('../inc/questionload.php'); ?>
+    <?php include('../inc/questionload.php'); ?>
   </table>
 </div>

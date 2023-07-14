@@ -107,13 +107,13 @@ else
                     <tr bgcolor="#f7faff">
                       <td valign="top">Date:</td>
                       <td valign="top">
-                        <input name="date" type="text" class="swifttext" id="date" size="30" maxlength="10" value="<? echo($localdate); ?>" readonly="readonly"  autocomplete="off" style="background:#FEFFE6;"/>
+                        <input name="date" type="text" class="swifttext" id="date" size="30" maxlength="10" value="<?php echo($localdate); ?>" readonly="readonly"  autocomplete="off" style="background:#FEFFE6;"/>
                       </td>
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top">Time:</td>
                       <td valign="top">
-                        <input name="time" type="text" class="swifttext" id="time" size="30" maxlength="10" value="<? echo($localtime); ?>" readonly="readonly"  autocomplete="off"  style="background:#FEFFE6;"/>
+                        <input name="time" type="text" class="swifttext" id="time" size="30" maxlength="10" value="<?php echo($localtime); ?>" readonly="readonly"  autocomplete="off"  style="background:#FEFFE6;"/>
                       </td>
                     </tr>
                 </table></td>
@@ -126,7 +126,7 @@ else
                       <td valign="top">Billed By:</td>
                       <td valign="top"><select name="billedby" class="swiftselect" id="billedby"  readonly="readonly" >
                         <option value="" selected="selected">Select</option>
-                        <? include('../inc/useridselection.php'); ?>
+                        <?php include('../inc/useridselection.php'); ?>
                       </select></td>
                     </tr>
                     <tr bgcolor="#f7faff">
@@ -147,7 +147,7 @@ else
                     </tr>
                     <tr bgcolor="#f7faff">
                       <td valign="top">User ID:</td>
-                      <td valign="top"><input name="userid" type="text" class="swifttext" id="userid" size="30" readonly="readonly" value="<? echo($loggedusername); ?>"  autocomplete = "off" style="background:#FEFFE6;"/></td>
+                      <td valign="top"><input name="userid" type="text" class="swifttext" id="userid" size="30" readonly="readonly" value="<?php echo($loggedusername); ?>"  autocomplete = "off" style="background:#FEFFE6;"/></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top">Team leader Remarks:</td>
@@ -214,7 +214,7 @@ else
                       <td valign="top" bgcolor="#EDF4FF">Product group:</td>
                       <td valign="top" bgcolor="#EDF4FF">
                         <span id="filterprdgroupdisplay">
-                     <? include('../inc/productgroup.php');  
+                     <?php include('../inc/productgroup.php');  
 					   				   productname('s_productgroup','');
 									?>
                        </span>
@@ -224,14 +224,14 @@ else
                       <td valign="top" bgcolor="#EDF4FF">Product Name:</td>
                       <td valign="top" bgcolor="#EDF4FF"><select name="s_productname" class="swiftselect" id="s_productname">
                         <option value="">All</option>
-                      <? include('../inc/productfilter.php'); ?>
+                      <?php include('../inc/productfilter.php'); ?>
                       </select></td>
                     </tr>
                     <tr bgcolor="#f7faff">
                       <td valign="top" bgcolor="#EDF4FF">State:</td>
                       <td valign="top" bgcolor="#EDF4FF">
                           <select name="s_state" id="s_state" class="swifttext" >
-                             <? include('../inc/state.php'); ?>
+                             <?php include('../inc/state.php'); ?>
                           </select>
                       </td>
                     </tr>
@@ -253,7 +253,7 @@ else
                       <td valign="top">Billed By:</td>
                       <td valign="top"><select name="s_billedby" id="s_billedby" class="swiftselect">
                         <option value="" selected="selected">All</option>
-                        <? include('../inc/useridselection.php'); ?>
+                        <?php include('../inc/useridselection.php'); ?>
                       </select></td>
                     </tr>
                     <tr bgcolor="#f7faff">
@@ -264,7 +264,7 @@ else
                       <td valign="top">Entered By:</td>
                       <td valign="top"><select name="s_userid" id="s_userid" class="swiftselect">
                         <option value="" selected="selected">All</option>
-                        <? include('../inc/useridselection.php'); ?>
+                        <?php include('../inc/useridselection.php'); ?>
                       </select></td>
                     </tr>
                     <tr bgcolor="#f7faff">
@@ -386,7 +386,7 @@ No</label><label><input type="radio" name="flagdatabasefield" id="flagdatabasefi
   <tr>
     <td><div id="gc-form-error"></div></td>
   </tr>
-  <? include('../inc/invoiceregisterload.php'); ?>
+  <?php include('../inc/invoiceregisterload.php'); ?>
 </table>
 </div>
 
@@ -399,7 +399,7 @@ No</label><label><input type="radio" name="flagdatabasefield" id="flagdatabasefi
   <tr>
     <td><div id="gq-form-error"></div></td>
   </tr>
-  <? include('../inc/questionload.php'); ?>
+  <?php include('../inc/questionload.php'); ?>
 </table>
 </div>
-<? } ?>
+<?php } ?>

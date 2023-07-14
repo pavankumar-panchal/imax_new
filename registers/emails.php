@@ -1,4 +1,4 @@
-<?
+<?php
 if($usertype == 'GUEST')
 	header("location:../index.php");
 else
@@ -14,9 +14,9 @@ else
 	}
 
 ?>
-<link rel="stylesheet" type="text/css" href="../style/main.css?dummy = <? echo (rand());?>">
-<script language="javascript" src="../functions/emailregister.js?dummy = <? echo (rand());?>" type="text/javascript"></script>
-<script language="javascript" src="../functions/fileupload.js?dummy = <? echo (rand());?>" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="../style/main.css?dummy = <?php echo (rand());?>">
+<script language="javascript" src="../functions/emailregister.js?dummy = <?php echo (rand());?>" type="text/javascript"></script>
+<script language="javascript" src="../functions/fileupload.js?dummy = <?php echo (rand());?>" type="text/javascript"></script>
 <div id="contentdiv" style="display:block;">
   <table width="100%" border="0" cellspacing="0" cellpadding="4">
     <tr>
@@ -78,10 +78,10 @@ else
                               <span id="getcustomerlink" style="visibility:visible"> <a href="javascript:void(0);" onclick="getcustomer(); getcustomerfunc();registernameload('email');" style="cursor:pointer"> <img src="../images/userid-bg.gif" width="14" height="16" border="0" align="absmiddle" /></a></span>
                               <input type="hidden" name="lastslno" id="lastslno" value="" />
                               <input type="hidden" name="cusid" id="cusid" value="" />
-                              <input type="hidden" name="loggeduser" id="loggeduser" value="<? echo($user); ?>"/>
-                              <input type="hidden" name="loggedusertype" id="loggedusertype" value="<? echo($usertype); ?>"/>
-                              <input type="hidden" name="loggedreportingauthority" id="loggedreportingauthority" value="<? echo($reportingauthority ); ?>"/>
-                              <input type="hidden" name="hiddenserverdate" id="hiddenserverdate" value="<? echo(datetimelocal('d-m-Y')); ?>"/></td>
+                              <input type="hidden" name="loggeduser" id="loggeduser" value="<?php echo($user); ?>"/>
+                              <input type="hidden" name="loggedusertype" id="loggedusertype" value="<?php echo($usertype); ?>"/>
+                              <input type="hidden" name="loggedreportingauthority" id="loggedreportingauthority" value="<?php echo($reportingauthority ); ?>"/>
+                              <input type="hidden" name="hiddenserverdate" id="hiddenserverdate" value="<?php echo(datetimelocal('d-m-Y')); ?>"/></td>
                           </tr>
                           <tr bgcolor="#f7faff">
                             <td valign="top">Customer ID:</td>
@@ -90,11 +90,11 @@ else
                           </tr>
                           <tr bgcolor="#edf4ff">
                             <td valign="top">Date:</td>
-                            <td valign="top"><input name="date" type="text" class="swifttext" id="date" size="30" autocomplete="off" readonly="readonly" value="<? echo(datetimelocal('d-m-Y')); ?>" style="background:#FEFFE6;" /></td>
+                            <td valign="top"><input name="date" type="text" class="swifttext" id="date" size="30" autocomplete="off" readonly="readonly" value="<?php echo(datetimelocal('d-m-Y')); ?>" style="background:#FEFFE6;" /></td>
                           </tr>
                           <tr bgcolor="#f7faff">
                             <td valign="top">Time:</td>
-                            <td valign="top"><input name="time" type="text" class="swifttext" id="time" size="30" autocomplete="off" readonly="readonly" value="<? echo(datetimelocal('H:i:s')); ?>"  style="background:#FEFFE6;" /></td>
+                            <td valign="top"><input name="time" type="text" class="swifttext" id="time" size="30" autocomplete="off" readonly="readonly" value="<?php echo(datetimelocal('H:i:s')); ?>"  style="background:#FEFFE6;" /></td>
                           </tr>
                           <tr bgcolor="#edf4ff">
                             <td valign="top">Category:</td>
@@ -109,7 +109,7 @@ else
                       <td valign="top">
                           <select name="state" id="state" class="swiftselect" autocomplete="off" disabled="disabled"  style="background:#FEFFE6;"  >
                           
-                             <? include('../inc/state.php'); ?>
+                             <?php include('../inc/state.php'); ?>
                           </select>
                       </td>
                     </tr>
@@ -120,7 +120,7 @@ else
                             <tr bgcolor="#edf4ff">
                             <td valign="top" >Product group:</td>
                                 <td valign="top">
-                                    <? include('../inc/productgroup.php');  
+                                    <?php include('../inc/productgroup.php');  
 					   				   productname('productgroup','');
 									?>
                                 </td>
@@ -174,7 +174,7 @@ else
                             <td valign="top">Forwarded To:</td>
                             <td valign="top"><select name="forwardedto" id="forwardedto" class="swiftselect">
                                 <option value="" selected="selected">Select</option>
-                                <? include('../inc/useridselection.php'); ?>
+                                <?php include('../inc/useridselection.php'); ?>
                                 <option value="others">Others</option>
                               </select></td>
                           </tr>
@@ -188,7 +188,7 @@ else
                           </tr>
                           <tr bgcolor="#f7faff">
                             <td valign="top">Entered By:</td>
-                            <td valign="top"><input name="userid" type="text" class="swifttext" id="userid" size="30" readonly="readonly" value="<? echo($loggedusername); ?>"  autocomplete = "off" style="background:#FEFFE6;"/></td>
+                            <td valign="top"><input name="userid" type="text" class="swifttext" id="userid" size="30" readonly="readonly" value="<?php echo($loggedusername); ?>"  autocomplete = "off" style="background:#FEFFE6;"/></td>
                           </tr>
                           <tr bgcolor="#edf4ff">
                             <td valign="top">Email Register ID:</td>
@@ -241,12 +241,12 @@ else
                       <td width="50%" valign="top" style="border-right:1px solid #d1dceb;"><table width="100%" border="0" cellspacing="0" cellpadding="3">
                           <tr bgcolor="#f7faff">
                             <td valign="top">From Date:</td>
-                            <td valign="top"><input name="fromdate" type="text" class="swifttext" id="DPC_fromdate" size="30" autocomplete="off" style="background:#FEFFE6;" value="<? echo($date); ?>" /></td>
+                            <td valign="top"><input name="fromdate" type="text" class="swifttext" id="DPC_fromdate" size="30" autocomplete="off" style="background:#FEFFE6;" value="<?php echo($date); ?>" /></td>
                           </tr>
                           <tr bgcolor="#edf4ff">
                             <td valign="top">To Date:</td>
                             <td valign="top"><label>
-                              <input name="todate" type="text" class="swifttext" id="DPC_todate" size="30" autocomplete="off" style="background:#FEFFE6;"  value="<?  echo(datetimelocal('d-m-Y')); ?>" />
+                              <input name="todate" type="text" class="swifttext" id="DPC_todate" size="30" autocomplete="off" style="background:#FEFFE6;"  value="<?php  echo(datetimelocal('d-m-Y')); ?>" />
                               </label>
                               <label></label></td>
                           </tr>
@@ -290,7 +290,7 @@ else
                           <td valign="top" bgcolor="#EDF4FF">State:</td>
                           <td valign="top" bgcolor="#EDF4FF">
                               <select name="s_state" id="s_state" class="swiftselect" >
-                                 <? include('../inc/state.php'); ?>
+                                 <?php include('../inc/state.php'); ?>
                               </select>
                           </td>
                         </tr>
@@ -313,7 +313,7 @@ else
                               <td valign="top" bgcolor="#EDF4FF">Product group:</td>
                               <td valign="top" bgcolor="#EDF4FF">
                                 <span id="filterprdgroupdisplay">
-								<?  productname('s_productgroup','');?>
+								<?php  productname('s_productgroup','');?>
                               <!-- Details are in javascript.js page as a function prdgroup();-->
                                </span>
                                </td>
@@ -322,7 +322,7 @@ else
                           <td valign="top" bgcolor="#EDF4FF">Product Name:</td>
                           <td valign="top" bgcolor="#EDF4FF"><select name="s_productname" class="swiftselect" id="s_productname">
                             <option value="">All</option>
-                          <? include('../inc/productfilter.php'); ?>
+                          <?php include('../inc/productfilter.php'); ?>
                           </select></td>
                         </tr>
                           <tr bgcolor="#edf4ff">
@@ -349,7 +349,7 @@ else
                             <td valign="top">Fowarded To:</td>
                             <td valign="top"><select name="s_forwardedto" id="s_forwardedto" class="swiftselect">
                                 <option value="" selected="selected">All</option>
-                                <? include('../inc/useridselection.php'); ?>
+                                <?php include('../inc/useridselection.php'); ?>
                                 <option value="others">Others</option>
                               </select></td>
                           </tr>
@@ -373,7 +373,7 @@ else
                             <td valign="top">Entered By:</td>
                             <td valign="top"><select name="s_userid" id="s_userid" class="swiftselect">
                                 <option value="" selected="selected">All</option>
-                                <? include('../inc/useridselection.php'); ?>
+                                <?php include('../inc/useridselection.php'); ?>
                               </select></td>
                           </tr>
                           <tr bgcolor="#f7faff">
@@ -396,7 +396,7 @@ else
                             <td valign="top" bgcolor="#F7FAFF">Support Unit:</td>
                             <td valign="top" bgcolor="#F7FAFF"><select name="s_supportunit" class="swiftselect" id="s_supportunit"  >
                                 <option value="">ALL</option>
-                                <? include('../inc/supportunit.php'); ?>
+                                <?php include('../inc/supportunit.php'); ?>
                               </select></td>
                           </tr>
                           <tr bgcolor="#edf4ff">
@@ -502,7 +502,7 @@ else
     <tr>
       <td><div id="gc-form-error"></div></td>
     </tr>
-    <? include('../inc/nameload.php'); ?>
+    <?php include('../inc/nameload.php'); ?>
   </table>
 </div>
 <div id="questionload" style="display:none;">
@@ -513,10 +513,10 @@ else
     <tr>
       <td><div id="gq-form-error"></div></td>
     </tr>
-    <? include('../inc/questionload.php'); ?>
+    <?php include('../inc/questionload.php'); ?>
   </table>
 </div>
 <div id="fileuploaddiv" style="display:none;">
-  <? include('../inc/fileuploadform.php'); ?>
+  <?php include('../inc/fileuploadform.php'); ?>
 </div>
-<? } ?>
+<?php } ?>

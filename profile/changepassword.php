@@ -1,4 +1,4 @@
-<?
+<?php
 if(isset($_POST["update"]))
 {
 	$password = trim($_POST["password"]);
@@ -24,7 +24,7 @@ if(isset($_POST["update"]))
 	}
 }
 ?>
-<link rel="stylesheet" type="text/css" href="../style/main.css?dummy = <? echo (rand());?>">
+<link rel="stylesheet" type="text/css" href="../style/main.css?dummy = <?php echo (rand());?>">
 <table width="100%" border="0" cellspacing="0" cellpadding="4">
   <tr>
     <td class="content-header">Profile > Change Password</td>
@@ -59,7 +59,7 @@ if(isset($_POST["update"]))
                 <tr><td colspan="2" style ="border-top:1px solid #d1dceb">&nbsp;</td>
               <tr>
               
-                <td width="75%" align="left" valign="middle" ><div id="form-error"><? echo($message) ?></div></td>
+                <td width="75%" align="left" valign="middle" ><div id="form-error"><?php echo $message; ?></div></td>
                 <td width="25%" align="right" valign="middle" style="padding-right:15px; "><input name="update" type="submit" class="swiftchoicebutton" id="update" value="Update" />
 &nbsp;&nbsp;&nbsp;
 <input name="clear" type="reset" class="swiftchoicebutton" id="clear" value="Clear" onclick="document.getElementById('form-error').innerHTML = ''" /></td>

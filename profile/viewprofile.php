@@ -1,4 +1,4 @@
-<?
+<?php
 if(!isset($_POST['fullname'])){	$_POST['fullname'] = null;	}
 if(!isset($_POST['presentaddress'])){ $_POST['presentaddress'] = null;	}
 if(!isset($_POST['permanentaddress'])){	$_POST['permanentaddress'] = null;	}
@@ -44,13 +44,13 @@ $d_personalemail = $fetch['personalemail'];
 $d_officialemail = $fetch['officialemail'];
 
 ?>
-<link rel="stylesheet" type="text/css" href="../style/main.css?dummy = <? echo (rand());?>">
+<link rel="stylesheet" type="text/css" href="../style/main.css?dummy = <?php echo (rand());?>">
 <table width="100%" border="0" cellspacing="0" cellpadding="4">
   <tr>
     <td class="content-header">Profile > View Profile</td>
   </tr>
   <tr>
-    <td><div id="form-error"><? echo($message); ?></div></td>
+    <td><div id="form-error"><?php echo($message); ?></div></td>
   </tr>
   <tr>
     <td style="padding:0"><table width="100%" border="0" cellspacing="0" cellpadding="0" style="border:1px solid #6393df; border-top:none;">
@@ -66,54 +66,54 @@ $d_officialemail = $fetch['officialemail'];
                 <td width="50%" valign="top" style="border-right:1px solid #d1dceb;"><table width="100%" border="0" cellspacing="0" cellpadding="5">
                     <tr bgcolor="#f7faff">
                       <td width="50%" valign="top">User Name:</td>
-                      <td width="50%" valign="top"><font color="#FF6200"><? echo($d_fullname); ?></font></td>
+                      <td width="50%" valign="top"><font color="#FF6200"><?php echo($d_fullname); ?></font></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top">Gender:</td>
-                      <td valign="top"><font color="#FF6200"><? echo($d_gender); ?></font></td>
+                      <td valign="top"><font color="#FF6200"><?php echo($d_gender); ?></font></td>
                     </tr>
                     <tr bgcolor="#f7faff">
                       <td valign="top">Mobile:</td>
-                      <td valign="top"><font color="#FF6200"><? echo($d_mobile); ?></font></td>
+                      <td valign="top"><font color="#FF6200"><?php echo($d_mobile); ?></font></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top">Designation:</td>
-                      <td valign="top"><font color="#FF6200"><? echo($d_designation); ?></font></td>
+                      <td valign="top"><font color="#FF6200"><?php echo($d_designation); ?></font></td>
                     </tr>
                     <tr bgcolor="#f7faff">
                       <td valign="top">Date of Birth:</td>
-                      <td valign="top"><font color="#FF6200"><? echo($d_dob); ?></font></td>
+                      <td valign="top"><font color="#FF6200"><?php echo($d_dob); ?></font></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top">Present Address:</td>
-                      <td valign="top"><font color="#FF6200"><? echo($d_presentaddress); ?></font></td>
+                      <td valign="top"><font color="#FF6200"><?php echo($d_presentaddress); ?></font></td>
                     </tr>
                 </table></td>
                 <td width="50%" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="5">
                     <tr bgcolor="#f7faff">
                       <td width="50%" valign="top">Permanent Address:</td>
-                      <td width="50%" valign="top"><font color="#FF6200"><? echo($d_permanentaddress); ?></font></td>
+                      <td width="50%" valign="top"><font color="#FF6200"><?php echo($d_permanentaddress); ?></font></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top">Date of joining:</td>
-                      <td valign="top"><font color="#FF6200"><? echo($d_doj); ?></font></td>
+                      <td valign="top"><font color="#FF6200"><?php echo($d_doj); ?></font></td>
                     </tr>
                     <tr bgcolor="#f7faff">
                       <td valign="top">Personal Email:</td>
-                      <td valign="top"><font color="#FF6200"><? echo($d_personalemail); ?></font></td>
+                      <td valign="top"><font color="#FF6200"><?php echo($d_personalemail); ?></font></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top">Official Email:</td>
-                      <td valign="top"><font color="#FF6200"><? echo($d_officialemail); ?></font></td>
+                      <td valign="top"><font color="#FF6200"><?php echo($d_officialemail); ?></font></td>
                     </tr>
                     <tr bgcolor="#f7faff">
                       <td valign="top">Contact Number:
 [In case of Emergency]</td>
-                      <td valign="top"><font color="#FF6200"><? echo($d_emergencynumber); ?></font></td>
+                      <td valign="top"><font color="#FF6200"><?php echo($d_emergencynumber); ?></font></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top">Emergency Remarks:</td>
-                      <td valign="top"><font color="#FF6200"><? echo($d_emergencyremarks); ?></font></td>
+                      <td valign="top"><font color="#FF6200"><?php echo($d_emergencyremarks); ?></font></td>
                     </tr>
                 </table></td>
               </tr>

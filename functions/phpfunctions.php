@@ -5,7 +5,10 @@ if (file_exists("../inc/dbconfig.php")) {
 } elseif (file_exists("../../inc/dbconfig.php")) {
 	include('../../inc/dbconfig.php');
 } else
-	include('./inc/dbconfig.php');
+
+
+
+
 $dbhost = "localhost";
 $dbuser = "root";
 $dbpwd = "";
@@ -136,7 +139,7 @@ function runmysqlqueryfetch_old($query)
 	mysqli_select_db($newconnection_old, $dbname) or die("Cannot connect to database");
 	set_time_limit(3600);
 	//Run the query
-	$result = mysqli_query($newconnection_old ,$query) or die(" run Query Failed in Runquery function1." . $query); //;
+	$result = mysqli_query($newconnection_old, $query) or die(" run Query Failed in Runquery function1." . $query); //;
 
 	//Fetch the Query to an array
 	$fetchresult = mysqli_fetch_array($result) or die("Cannot fetch the query result." . $query);
@@ -163,17 +166,17 @@ function runmysqlqueryfetch_old($query)
 
 function changedateformat($date)
 {
-    if ($date !== "0000-00-00") {
-        if (strpos($date, " ")) {
-            $result = explode(" ", $date);
-        } else {
-            $result = preg_split("/[:.\/-]/", $date);
-        }
-        $date = $result[2] . "-" . $result[1] . "-" . $result[0];
-    } else {
-        $date = "";
-    }
-    return $date;
+	if ($date !== "0000-00-00") {
+		if (strpos($date, " ")) {
+			$result = explode(" ", $date);
+		} else {
+			$result = preg_split("/[:.\/-]/", $date);
+		}
+		$date = $result[2] . "-" . $result[1] . "-" . $result[0];
+	} else {
+		$date = "";
+	}
+	return $date;
 }
 
 
@@ -181,7 +184,7 @@ function changedateformat($date)
 function changetimeformat($time)
 {
 	if ($time <> "00:00:00") {
-		$result = split(":", $time);
+		$result = explode(":", $time);
 		$time = $result[0] . ":" . $result[1] . ":" . $result[2];
 	} else {
 		$time = "";
@@ -254,10 +257,10 @@ function runaccessqueryco($query)
 
 	//Run the query
 	$result = odbc_exec($connection, $query) or die(" run Query Failed in runquery function");
-	
+
 	//Return the result
 	return $result;
-	
+
 	//Close the database connection
 	odbc_close($connection);
 }
@@ -685,7 +688,6 @@ function getpagelink($linkvalue)
 			break;
 	}
 }
-
 function getpagetitle($linkvalue)
 {
 	switch ($linkvalue) {
@@ -699,7 +701,7 @@ function getpagetitle($linkvalue)
 			return 'SSM : Help';
 			break;
 		case 'master_users':
-			if ($usertype <> 'ADMIN')
+			if ($usertype != 'ADMIN')
 				return 'SSM : Dashboard';
 			else
 				return 'SSM : Users';

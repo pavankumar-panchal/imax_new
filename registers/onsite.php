@@ -1,4 +1,4 @@
-<?
+<?php
 	$month = date('m'); 
 	if($month >= '04')
 	$date = '01-04-'.date('Y'); 
@@ -8,8 +8,8 @@
 	$date = '01-04-'.$year; //echo($date);
 	}
 ?>
-<link rel="stylesheet" type="text/css" href="../style/main.css?dummy = <? echo (rand());?>">
-<script language="javascript" src="../functions/onsiteregister.js?dummy = <? echo (rand());?>" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="../style/main.css?dummy = <?php echo (rand());?>">
+<script language="javascript" src="../functions/onsiteregister.js?dummy = <?php echo (rand());?>" type="text/javascript"></script>
 <div id="contentdiv" style="display:block;">
 <table width="100%" border="0" cellspacing="0" cellpadding="4">
   <tr>
@@ -46,11 +46,11 @@
                       <td valign="top"><input name="customername" type="text" class="swifttext" id="customername" size="30" autocomplete="off" readonly="readonly" style="background:#FEFFE6;" />
                           <span id="getcustomerlink" style="visibility:visible;"><a href="javascript:void(0);" onclick="getcustomer(); getcustomerfunc();registernameload('onsite')" style="cursor:pointer"> <img src="../images/userid-bg.gif" width="14" height="16" border="0" align="absmiddle" /></a></span>
                           <input type="hidden" name="lastslno" id="lastslno" value="" />
-                          <input type="hidden" name="loggeduser" id="loggeduser" value="<? echo($user); ?>"/>
-                          <input type="hidden" name="loggedusertype" id="loggedusertype" value="<? echo($usertype); ?>"/>
-                          <input type="hidden" name="loggedreportingauthority" id="loggedreportingauthority" value="<? echo($reportingauthority ); ?>" style="background:#FEFFE6;" />
-                          <input type="hidden" name="hiddenserverdate" id="hiddenserverdate" value="<? echo(datetimelocal('d-m-Y')); ?>"/>
-                          <input type="hidden" name="dummyfield" id="dummyfield" value="<? echo(datetimelocal('d-m-Y')); ?>"/></td>
+                          <input type="hidden" name="loggeduser" id="loggeduser" value="<?php echo($user); ?>"/>
+                          <input type="hidden" name="loggedusertype" id="loggedusertype" value="<?php echo($usertype); ?>"/>
+                          <input type="hidden" name="loggedreportingauthority" id="loggedreportingauthority" value="<?php echo($reportingauthority ); ?>" style="background:#FEFFE6;" />
+                          <input type="hidden" name="hiddenserverdate" id="hiddenserverdate" value="<?php echo(datetimelocal('d-m-Y')); ?>"/>
+                          <input type="hidden" name="dummyfield" id="dummyfield" value="<?php echo(datetimelocal('d-m-Y')); ?>"/></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top">Customer ID:</td>
@@ -58,11 +58,11 @@
                     </tr>
                     <tr bgcolor="#f7faff">
                       <td valign="top">Date:</td>
-                      <td valign="top"><input name="date" type="text" class="swifttext" id="date" size="30" autocomplete="off" readonly="readonly"  style="background:#FEFFE6;" value="<? echo(datetimelocal('d-m-Y')); ?>" />                      </td>
+                      <td valign="top"><input name="date" type="text" class="swifttext" id="date" size="30" autocomplete="off" readonly="readonly"  style="background:#FEFFE6;" value="<?php echo(datetimelocal('d-m-Y')); ?>" />                      </td>
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top">Time:</td>
-                      <td valign="top"><input name="time" type="text" class="swifttext" id="time" size="30" autocomplete="off" readonly="readonly"  style="background:#FEFFE6;"  value="<? echo(datetimelocal('H:i:s')); ?>"/>                        </td>
+                      <td valign="top"><input name="time" type="text" class="swifttext" id="time" size="30" autocomplete="off" readonly="readonly"  style="background:#FEFFE6;"  value="<?php echo(datetimelocal('H:i:s')); ?>"/>                        </td>
                     </tr>
                     <tr bgcolor="#f7faff">
                       <td valign="top">Category:</td>
@@ -73,7 +73,7 @@
                       <td valign="top" bgcolor="#EDF4FF">
                           <select name="state" id="state" class="swiftselect" autocomplete="off" disabled="disabled" style="background:#FEFFE6;"  >
                           
-                             <? include('../inc/state.php'); ?>
+                             <?php include('../inc/state.php'); ?>
                           </select>
                       </td>
                     </tr>
@@ -84,7 +84,7 @@
                     <tr bgcolor="#f7faff">
                       <td valign="top" bgcolor="#EDF4FF">Product group:</td>
                       <td valign="top" bgcolor="#EDF4FF">
-                        <? include('../inc/productgroup.php');  
+                        <?php include('../inc/productgroup.php');  
 					   	   productname('productgroup','');
 						?>
                        </td>
@@ -121,13 +121,13 @@
                       <td valign="top" bgcolor="#EDF4FF">Status:</td>
                       <td valign="top" bgcolor="#EDF4FF"><select name="status" class="swiftselect" id="status">
                         <option value="notyetattended" selected="selected">Un Attended</option>
-                        <? if($usertype <> 'GUEST' && $usertype <> 'EXECUTIVE-OTHERS') { ?>
+                        <?php if($usertype <> 'GUEST' && $usertype <> 'EXECUTIVE-OTHERS') { ?>
                         <option value="postponed">Postponed</option>
                         <option value="inprocess">In Process</option>
                         <option value="solved">Solved</option>
                         <option value="skipped">Skipped</option>
                         <option value="unsolved">Un Solved</option>
-                        <? } ?>
+                        <?php } ?>
                       </select></td>
                     </tr>
                 </table></td>
@@ -136,46 +136,46 @@
                       <td valign="top" bgcolor="#EDF4FF">Support Units:</td>
                       <td valign="top" bgcolor="#EDF4FF"><select name="supportunit" class="swiftselect" id="supportunit">
                         <option value="" selected="selected">Make A Selection</option>
-                        <? include('../inc/supportunitonsite.php'); ?>
+                        <?php include('../inc/supportunitonsite.php'); ?>
                       </select></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top" bgcolor="#F7FAFF">Assigned To:</td>
-                      <td valign="top" bgcolor="#F7FAFF"><select name="assignedto" class="swiftselect" id="assignedto" <? if($usertype <> 'ADMIN' && $usertype <> 'MANAGEMENT' && $usertype <> 'TEAMLEADER' && $usertype <> 'EXECUTIVE-ONSITE' ) { ?> disabled="disabled"> <option value="">Make A Selection</option> <?  include('../inc/useridselectionreports.php'); } else { ?> ><option value="">Make A Selection</option><? include('../inc/useridselectionreports.php'); } ?></select></td>
+                      <td valign="top" bgcolor="#F7FAFF"><select name="assignedto" class="swiftselect" id="assignedto" <?php if($usertype <> 'ADMIN' && $usertype <> 'MANAGEMENT' && $usertype <> 'TEAMLEADER' && $usertype <> 'EXECUTIVE-ONSITE' ) { ?> disabled="disabled"> <option value="">Make A Selection</option> <?php  include('../inc/useridselectionreports.php'); } else { ?> ><option value="">Make A Selection</option><?php include('../inc/useridselectionreports.php'); } ?></select></td>
                     </tr>
                     <tr bgcolor="#f7faff">
                       <td valign="top" bgcolor="#EDF4FF">Solved By:</td>
-                      <td valign="top" bgcolor="#EDF4FF"><select name="solvedby" class="swiftselect" id="solvedby" <? if($usertype <> 'ADMIN' && $usertype <> 'MANAGEMENT' && $usertype <> 'TEAMLEADER' && $usertype <> 'EXECUTIVE-ONSITE' ) { ?> disabled="disabled">  <option value="">Make A Selection</option>  <?  include('../inc/useridselectionreports.php'); } else { ?> 
-                       <option value="">Make A Selection</option> <? include('../inc/useridselectionreports.php'); } ?></select></td>
+                      <td valign="top" bgcolor="#EDF4FF"><select name="solvedby" class="swiftselect" id="solvedby" <?php if($usertype <> 'ADMIN' && $usertype <> 'MANAGEMENT' && $usertype <> 'TEAMLEADER' && $usertype <> 'EXECUTIVE-ONSITE' ) { ?> disabled="disabled">  <option value="">Make A Selection</option>  <?php  include('../inc/useridselectionreports.php'); } else { ?> 
+                       <option value="">Make A Selection</option> <?php include('../inc/useridselectionreports.php'); } ?></select></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top" bgcolor="#F7FAFF">Solved Through:</td>
-                      <td valign="top" bgcolor="#F7FAFF"><label><input name="stremoteconnection" id="stremoteconnection" type="checkbox" value="" <?  if($usertype <> 'ADMIN' && $usertype <> 'MANAGEMENT' && $usertype <> 'TEAMLEADER' && $usertype <> 'EXECUTIVE-ONSITE' ) { ?> disabled="disabled" <? } ?>  /> Remote Connection </label><label><input name="marketingperson" id="marketingperson" type="checkbox" value="" <?  if($usertype <> 'ADMIN' && $usertype <> 'MANAGEMENT' && $usertype <> 'TEAMLEADER' && $usertype <> 'EXECUTIVE-ONSITE' ) { ?> disabled="disabled" <? } ?>  /> Marketing Person </label><label><input name="onsitevisit" id="onsitevisit" type="checkbox" value="" <?  if($usertype <> 'ADMIN' && $usertype <> 'MANAGEMENT' && $usertype <> 'TEAMLEADER' && $usertype <> 'EXECUTIVE-ONSITE' ) { ?> disabled="disabled" <? } ?>  /> Onsite Visit </label><br />
-<label><input name="overphone" id="overphone" type="checkbox" value=""  <?  if($usertype <> 'ADMIN' && $usertype <> 'MANAGEMENT' && $usertype <> 'TEAMLEADER' && $usertype <> 'EXECUTIVE-ONSITE' ) { ?> disabled="disabled" <? } ?> /> Over Phone </label><label><input name="mail" id="mail" type="checkbox" value="" <?  if($usertype <> 'ADMIN' && $usertype <> 'MANAGEMENT' && $usertype <> 'TEAMLEADER' && $usertype <> 'EXECUTIVE-ONSITE' ) { ?> disabled="disabled" <? } ?>  /> Mail </label></td>
+                      <td valign="top" bgcolor="#F7FAFF"><label><input name="stremoteconnection" id="stremoteconnection" type="checkbox" value="" <?php  if($usertype <> 'ADMIN' && $usertype <> 'MANAGEMENT' && $usertype <> 'TEAMLEADER' && $usertype <> 'EXECUTIVE-ONSITE' ) { ?> disabled="disabled" <?php } ?>  /> Remote Connection </label><label><input name="marketingperson" id="marketingperson" type="checkbox" value="" <?php  if($usertype <> 'ADMIN' && $usertype <> 'MANAGEMENT' && $usertype <> 'TEAMLEADER' && $usertype <> 'EXECUTIVE-ONSITE' ) { ?> disabled="disabled" <?php } ?>  /> Marketing Person </label><label><input name="onsitevisit" id="onsitevisit" type="checkbox" value="" <?php  if($usertype <> 'ADMIN' && $usertype <> 'MANAGEMENT' && $usertype <> 'TEAMLEADER' && $usertype <> 'EXECUTIVE-ONSITE' ) { ?> disabled="disabled" <?php } ?>  /> Onsite Visit </label><br />
+<label><input name="overphone" id="overphone" type="checkbox" value=""  <?php  if($usertype <> 'ADMIN' && $usertype <> 'MANAGEMENT' && $usertype <> 'TEAMLEADER' && $usertype <> 'EXECUTIVE-ONSITE' ) { ?> disabled="disabled" <?php } ?> /> Over Phone </label><label><input name="mail" id="mail" type="checkbox" value="" <?php  if($usertype <> 'ADMIN' && $usertype <> 'MANAGEMENT' && $usertype <> 'TEAMLEADER' && $usertype <> 'EXECUTIVE-ONSITE' ) { ?> disabled="disabled" <?php } ?>  /> Mail </label></td>
                     </tr>
                     <tr bgcolor="#f7faff">
                       <td valign="top" bgcolor="#EDF4FF">Solved Date:</td>
-                      <td valign="top" bgcolor="#EDF4FF"><input name="solveddate" type="text" class="swifttext" id="DPC_solveddate"  size="30" maxlength="10"  autocomplete="off"  style="background:#FEFFE6;" <?  if($usertype <> 'ADMIN' && $usertype <> 'MANAGEMENT' && $usertype <> 'TEAMLEADER' && $usertype <> 'EXECUTIVE-ONSITE' ) { ?> disabled="disabled" <? } ?> /></td>
+                      <td valign="top" bgcolor="#EDF4FF"><input name="solveddate" type="text" class="swifttext" id="DPC_solveddate"  size="30" maxlength="10"  autocomplete="off"  style="background:#FEFFE6;" <?php  if($usertype <> 'ADMIN' && $usertype <> 'MANAGEMENT' && $usertype <> 'TEAMLEADER' && $usertype <> 'EXECUTIVE-ONSITE' ) { ?> disabled="disabled" <?php } ?> /></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top" bgcolor="#F7FAFF">Bill Number:</td>
-                      <td valign="top" bgcolor="#F7FAFF"><input name="billno" type="text" class="swifttext" id="billno" size="30"  autocomplete="off" <?  if($usertype <> 'ADMIN' && $usertype <> 'MANAGEMENT' && $usertype <> 'TEAMLEADER' && $usertype <> 'EXECUTIVE-ONSITE' ) { ?> disabled="disabled" <? } ?>/></td>
+                      <td valign="top" bgcolor="#F7FAFF"><input name="billno" type="text" class="swifttext" id="billno" size="30"  autocomplete="off" <?php  if($usertype <> 'ADMIN' && $usertype <> 'MANAGEMENT' && $usertype <> 'TEAMLEADER' && $usertype <> 'EXECUTIVE-ONSITE' ) { ?> disabled="disabled" <?php } ?>/></td>
                     </tr>
                     <tr bgcolor="#f7faff">
                       <td valign="top" bgcolor="#EDF4FF">Bill Date:</td>
-                      <td valign="top" bgcolor="#EDF4FF"><input name="billdate" type="text" class="swifttext" id="DPC_billdate" size="30" maxlength="10"  autocomplete="off" style="background:#FEFFE6;" <?  if($usertype <> 'ADMIN' && $usertype <> 'MANAGEMENT' && $usertype <> 'TEAMLEADER' && $usertype <> 'EXECUTIVE-ONSITE' ) { ?> disabled="disabled" <? } ?> /></td>
+                      <td valign="top" bgcolor="#EDF4FF"><input name="billdate" type="text" class="swifttext" id="DPC_billdate" size="30" maxlength="10"  autocomplete="off" style="background:#FEFFE6;" <?php  if($usertype <> 'ADMIN' && $usertype <> 'MANAGEMENT' && $usertype <> 'TEAMLEADER' && $usertype <> 'EXECUTIVE-ONSITE' ) { ?> disabled="disabled" <?php } ?> /></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top" bgcolor="#F7FAFF">Acknowledgement Number:</td>
-                      <td valign="top" bgcolor="#F7FAFF"><input name="acknowledgementno" type="text" class="swifttext" id="acknowledgementno" value="" size="30" maxlength="20"  autocomplete="off" <?  if($usertype <> 'ADMIN' && $usertype <> 'MANAGEMENT' && $usertype <> 'TEAMLEADER' && $usertype <> 'EXECUTIVE-ONSITE' ) { ?> disabled="disabled" <? } ?>/></td>
+                      <td valign="top" bgcolor="#F7FAFF"><input name="acknowledgementno" type="text" class="swifttext" id="acknowledgementno" value="" size="30" maxlength="20"  autocomplete="off" <?php  if($usertype <> 'ADMIN' && $usertype <> 'MANAGEMENT' && $usertype <> 'TEAMLEADER' && $usertype <> 'EXECUTIVE-ONSITE' ) { ?> disabled="disabled" <?php } ?>/></td>
                     </tr>
                     <tr bgcolor="#f7faff">
                       <td valign="top" bgcolor="#EDF4FF">Remarks:</td>
-                      <td valign="top" bgcolor="#EDF4FF"><textarea name="remarks" cols="45" class="swifttextarea" id="remarks" <?  if($usertype <> 'ADMIN' && $usertype <> 'MANAGEMENT' && $usertype <> 'TEAMLEADER' && $usertype <> 'EXECUTIVE-ONSITE' ) { ?> disabled="disabled" <? } ?>></textarea></td>
+                      <td valign="top" bgcolor="#EDF4FF"><textarea name="remarks" cols="45" class="swifttextarea" id="remarks" <?php  if($usertype <> 'ADMIN' && $usertype <> 'MANAGEMENT' && $usertype <> 'TEAMLEADER' && $usertype <> 'EXECUTIVE-ONSITE' ) { ?> disabled="disabled" <?php } ?>></textarea></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top" bgcolor="#F7FAFF">Entered By:</td>
-                      <td valign="top" bgcolor="#F7FAFF"><input name="userid" type="text" class="swifttext" id="userid" size="30" readonly="readonly" value="<? echo($loggedusername); ?>"  autocomplete = "off" style="background:#FEFFE6;"/></td>
+                      <td valign="top" bgcolor="#F7FAFF"><input name="userid" type="text" class="swifttext" id="userid" size="30" readonly="readonly" value="<?php echo($loggedusername); ?>"  autocomplete = "off" style="background:#FEFFE6;"/></td>
                     </tr>
                     <tr bgcolor="#f7faff">
                       <td valign="top" bgcolor="#EDF4FF">Compliant ID:</td>
@@ -228,11 +228,11 @@
                 <td width="50%" valign="top" style="border-right:1px solid #d1dceb;"><table width="100%" border="0" cellspacing="0" cellpadding="3">
                     <tr bgcolor="#f7faff">
                       <td valign="top">From Date:</td>
-                      <td valign="top"><input name="fromdate" type="text" class="swifttext" id="DPC_fromdate" size="30" autocomplete="off" style="background:#FEFFE6;" value="<? echo($date); ?>" /></td>
+                      <td valign="top"><input name="fromdate" type="text" class="swifttext" id="DPC_fromdate" size="30" autocomplete="off" style="background:#FEFFE6;" value="<?php echo($date); ?>" /></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top">To Date:</td>
-                      <td valign="top"><input name="todate" type="text" class="swifttext" id="DPC_todate" size="30" autocomplete="off"   style="background:#FEFFE6;" value="<?  echo(datetimelocal('d-m-Y')); ?>" />                        </td>
+                      <td valign="top"><input name="todate" type="text" class="swifttext" id="DPC_todate" size="30" autocomplete="off"   style="background:#FEFFE6;" value="<?php  echo(datetimelocal('d-m-Y')); ?>" />                        </td>
                     </tr>
                     <tr bgcolor="#f7faff">
                       <td valign="top">Anonymous:</td>
@@ -266,7 +266,7 @@
                       <td valign="top" bgcolor="#EDF4FF">State:</td>
                       <td valign="top" bgcolor="#EDF4FF">
                           <select name="s_state" id="s_state" class="swiftselect" >
-                             <? include('../inc/state.php'); ?>
+                             <?php include('../inc/state.php'); ?>
                           </select>
                       </td>
                     </tr>
@@ -287,7 +287,7 @@ Dealers</label>
                       <td valign="top" bgcolor="#EDF4FF">Product group:</td>
                       <td valign="top" bgcolor="#EDF4FF">
                         <span id="filterprdgroupdisplay">
-                        <?  productname('s_productgroup','');?>
+                        <?php  productname('s_productgroup','');?>
                       <!-- Details are in javascript.js page as a function prdgroup();-->
                        </span>
                        </td>
@@ -296,7 +296,7 @@ Dealers</label>
                       <td valign="top" bgcolor="#EDF4FF">Product Name:</td>
                       <td valign="top" bgcolor="#EDF4FF"><select name="s_productname" class="swiftselect" id="s_productname">
                         <option value="">All</option>
-                      <? include('../inc/productfilter.php'); ?>
+                      <?php include('../inc/productfilter.php'); ?>
                       </select></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
@@ -320,7 +320,7 @@ Dealers</label>
                     <tr bgcolor="#f7faff">
                       <td valign="top">Solved By:</td>
                       <td valign="top"><select name="s_solvedby" class="swiftselect" id="s_solvedby">
-                        <option value="">All</option><? include('../inc/useridselection.php'); ?></select></td>
+                        <option value="">All</option><?php include('../inc/useridselection.php'); ?></select></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top">Solved Date:</td>
@@ -342,7 +342,7 @@ Dealers</label>
                       <td valign="top">Entered By:</td>
                       <td valign="top"><select name="s_userid" id="s_userid" class="swiftselect">
                         <option value="" selected="selected">All</option>
-                        <? include('../inc/useridselection.php'); ?>
+                        <?php include('../inc/useridselection.php'); ?>
                       </select></td>
                     </tr>
                     <tr bgcolor="#f7faff">
@@ -363,7 +363,7 @@ No</label><label><input type="radio" name="flagdatabasefield" id="flagdatabasefi
                       <td valign="top" bgcolor="#F7FAFF">Support Unit:</td>
                       <td valign="top" bgcolor="#F7FAFF"><select name="s_supportunit" class="swiftselect" id="s_supportunit">
                         <option value="">Make A Selection</option>
-                        <? include('../inc/supportunit.php'); ?>
+                        <?php include('../inc/supportunit.php'); ?>
                       </select></td>
                     </tr>
                     <tr bgcolor="#EDF4FF">
@@ -472,7 +472,7 @@ No</label><label><input type="radio" name="flagdatabasefield" id="flagdatabasefi
   <tr>
     <td><div id="gc-form-error"></div></td>
   </tr>
-  <? include('../inc/nameload.php'); ?>
+  <?php include('../inc/nameload.php'); ?>
 </table>
 </div>
 
@@ -484,6 +484,6 @@ No</label><label><input type="radio" name="flagdatabasefield" id="flagdatabasefi
   <tr>
     <td><div id="gq-form-error"></div></td>
   </tr>
-  <? include('../inc/questionload.php'); ?>
+  <?php include('../inc/questionload.php'); ?>
 </table>
 </div>

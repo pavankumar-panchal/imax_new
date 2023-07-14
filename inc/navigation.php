@@ -1,4 +1,6 @@
-<?php if($usertype == 'GUEST') { ?>
+<?php 
+if($usertype == 'GUEST') { 
+  ?>
 <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
               <tr>
                 <td height="20" align="center" class="navigation"><table width="100%" border="0" align="center" cellpadding="3" cellspacing="0" height="20">
@@ -55,7 +57,7 @@
                   <a href="./index.php?a_link=kb_add">Add Topics</a></div></td>
               </tr>
             </table>
-<? } else { ?>
+<?php } else {  ?>
 <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
               <tr>
                 <td height="20" align="center" class="navigation"><table width="100%" border="0" align="center" cellpadding="3" cellspacing="0" height="20">
@@ -102,30 +104,30 @@
                   <div style="display:none" id="tabgroup1t4"></div>
                   <div style="display:none" id="tabgroup1c4">
                   <a href="./index.php?a_link=master_customer">Customer</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
-                  <? if($usertype == 'ADMIN') { ?>
-                  <a href="./index.php?a_link=master_users">Users</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; <? } ?>
-                  <? if($usertype <> 'EXECUTIVE-OTHERS' && $usertype <> 'EXECUTIVE-ONSITE') { ?>
+                  <?php if($usertype == 'ADMIN') { ?>
+                  <a href="./index.php?a_link=master_users">Users</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; <?php } ?>
+                  <?php if($usertype <> 'EXECUTIVE-OTHERS' && $usertype <> 'EXECUTIVE-ONSITE') { ?>
                   <a href="./index.php?a_link=master_locations">Locations</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
-                  <? } ?>
+                  <?php } ?>
                   
                   <a href="./index.php?a_link=master_product">Products</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
                   <a href="./index.php?a_link=master_version">Versions</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
                   
-                  <? if($usertype <> 'EXECUTIVE-OTHERS' && $usertype <> 'EXECUTIVE-ONSITE') { ?>
+                  <?php if($usertype <> 'EXECUTIVE-OTHERS' && $usertype <> 'EXECUTIVE-ONSITE') { ?>
                   <a href="./index.php?a_link=master_osemployees">Out Station Employees</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
                   <a href="./index.php?a_link=master_dealers">Dealers</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
                   <a href="./index.php?a_link=master_category">Categories</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
                   <a href="./index.php?a_link=master_supportunit">Support Units</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
-                  <? } ?>
-                 <? if($usertype == 'ADMIN') { ?>
+                  <?php } ?>
+                 <?php if($usertype == 'ADMIN') { ?>
                    <a href="./index.php?a_link=master_nonworkingdays">Non Working Days</a>
-                  <? } ?>
+                  <?php } ?>
                   </div>
                   <div style="display:none" id = "tabgroup1t5"></div>
                   <div style="display:none" id = "tabgroup1c5">
-                 	<? if($usertype <> 'MANAGEMENT') { ?>
+                 	<?php if($usertype <> 'MANAGEMENT') { ?>
                   <a href="./index.php?a_link=profile_viewprofile">View Profile</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
-                  <? } ?>
+                  <?php } ?>
                   <a href="./index.php?a_link=profile_editprofile">Edit Profile</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;
                   <a href="./index.php?a_link=profile_changepassword">Change Password</a></div>
                   <div style="display:none" id="tabgroup1t6"></div>
@@ -144,5 +146,6 @@
                   <a href="./index.php?a_link=kb_add">Add Topics</a></div></td>
               </tr>
             </table>
-<?php } ?>            
+<?php }
+ ?>            
   

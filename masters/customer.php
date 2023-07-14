@@ -1,12 +1,12 @@
-<link rel="stylesheet" type="text/css" href="../style/main.css?dummy = <? echo (rand());?>">
-<link media="screen" rel="stylesheet" href="../style/colorbox.css?dummy=<? echo (rand());?>"  />
-<script language="javascript" src="../functions/colorbox.js?dummy=<? echo (rand());?>" ></script>
-<script language="javascript" src="../functions/customer.js?dummy = <? echo (rand());?>" type="text/javascript"></script>
-<script language="javascript" src="../functions/getdistrictjs.php?dummy = <? echo (rand());?>"></script>
-<script language="javascript" src="../functions/getdistrictfunction.php?dummy = <? echo (rand());?>"></script>
-<!--<script language="javascript" src="../functions/javascripts.php?dummy = <? echo (rand());?>"></script>-->
-<!--<script language="javascript" src="../functions/javascripts.js?dummy=<? echo (rand());?>"></script>-->
-<? //$userid = $_COOKIE['userid'];
+<link rel="stylesheet" type="text/css" href="../style/main.css?dummy = <?php echo (rand());?>">
+<link media="screen" rel="stylesheet" href="../style/colorbox.css?dummy=<?php echo (rand());?>"  />
+<script language="javascript" src="../functions/colorbox.js?dummy=<?php echo (rand());?>" ></script>
+<script language="javascript" src="../functions/customer.js?dummy = <?php echo (rand());?>" type="text/javascript"></script>
+<script language="javascript" src="../functions/getdistrictjs.php?dummy = <?php echo (rand());?>"></script>
+<script language="javascript" src="../functions/getdistrictfunction.php?dummy = <?php echo (rand());?>"></script>
+<!--<script language="javascript" src="../functions/javascripts.php?dummy = <?php echo (rand());?>"></script>-->
+<!--<script language="javascript" src="../functions/javascripts.js?dummy=<?php echo (rand());?>"></script>-->
+<?php //$userid = $_COOKIE['userid'];
 $userid = imaxgetcookie('ssmuserid');?>
 <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#ffffff">
   <tr>
@@ -177,7 +177,7 @@ $userid = imaxgetcookie('ssmuserid');?>
         <td width="21%" height="10" align="left" valign="top">Region:</td>
         <td width="79%" height="10" align="left" valign="top"><select name="region2" class="swiftselect" id="region2" style="width:180px;">
             <option value="">ALL</option>
-            <? 
+            <?php 
 											include('../inc/region.php');
 											?>
                                                                   </select></td>
@@ -186,7 +186,7 @@ $userid = imaxgetcookie('ssmuserid');?>
                                                                 <td align="left" valign="top" height="10" >State:</td>
                                                                 <td align="left" valign="top" height="10"><select name="state2" class="swiftselect" id="state2" onchange="getdistrictfilter('districtcodedisplaysearch',this.value);" onkeyup="getdistrictfilter('districtcodedisplaysearch',this.value);" style="width:180px;">
                                                                     <option value="">ALL</option>
-                                                                    <? include('../inc/state.php'); ?>
+                                                                    <?php include('../inc/state.php'); ?>
                                                                   </select></td>
                                                               </tr>
                                                               <tr>
@@ -199,14 +199,14 @@ $userid = imaxgetcookie('ssmuserid');?>
                                                                 <td height="10"> Dealer:</td>
                                                                 <td align="left" valign="top"   height="10"><select name="currentdealer2" class="swiftselect" id="currentdealer2" style="width:180px;">
                                                                     <option value="">ALL</option>
-                                                                    <? include('../inc/firstdealer.php');?>
+                                                                    <?php include('../inc/firstdealer.php');?>
                                                                   </select></td>
                                                               </tr>
                                                               <tr>
                                                                 <td height="10"> Branch:</td>
                                                                 <td align="left" valign="top"   height="10"><select name="branch2" class="swiftselect" id="branch2" style="width:180px;">
                                                                     <option value="">ALL</option>
-                                                                    <? include('../inc/branch.php');?>
+                                                                    <?php include('../inc/branch.php');?>
                                                                   </select></td>
                                                               </tr>
                                                               <tr>
@@ -214,7 +214,7 @@ $userid = imaxgetcookie('ssmuserid');?>
                                                                 <td align="left" valign="top"   height="10"><select name="type2" class="swiftselect" id="type2" style="width:180px;">
                                                                     <option value="">ALL</option>
                                                                     <option value="Not Selected">Not Selected</option>
-                                                                    <? include('../inc/custype.php');?>
+                                                                    <?php include('../inc/custype.php');?>
                                                                   </select></td>
                                                               </tr>
                                                               <tr>
@@ -222,7 +222,7 @@ $userid = imaxgetcookie('ssmuserid');?>
                                                                 <td align="left" valign="top"   height="10"><select name="category2" class="swiftselect" id="category2" style="width:180px;">
                                                                     <option value="">ALL</option>
                                                                     <option value="Not Selected">Not Selected</option>
-                                                                    <? include('../inc/businesscategory.php');?>
+                                                                    <?php include('../inc/businesscategory.php');?>
                                                                   </select></td>
                                                               </tr>
                                                             </table></td>
@@ -242,7 +242,7 @@ $userid = imaxgetcookie('ssmuserid');?>
                                                   </tr>
                                                   <tr>
                                                     <td colspan="3" valign="top" bgcolor="#FFFFFF" style="border:solid 1px #A8A8A8"><div style="height:230px; overflow:scroll" align="left">
-                                                        <? include('../inc/productdetails.php'); ?>
+                                                        <?php include('../inc/productdetails.php'); ?>
                                                       </div></td>
                                                   </tr>
                                                   <tr>
@@ -342,7 +342,7 @@ $userid = imaxgetcookie('ssmuserid');?>
                                                               <td width="38%" bgcolor="#edf4ff">State:</td>
                                                               <td width="62%" bgcolor="#edf4ff"><select name="state" class="swiftselect-mandatory" id="state" onchange="getdistrict('districtcodedisplay',this.value);" onkeyup="getdistrict('districtcodedisplay',this.value);"  style="width:200px;">
                                                                   <option value="">Select A State</option>
-                                                                  <? include('../inc/state.php'); ?>
+                                                                  <?php include('../inc/state.php'); ?>
                                                               </select></td>
                                                             </tr>
                                                             <tr>
@@ -384,7 +384,7 @@ $userid = imaxgetcookie('ssmuserid');?>
                                                                 <td  bgcolor="#F7FAFF">Type:</td>
                                                                 <td  bgcolor="#F7FAFF"><select name="type" class="swiftselect" id="type" style="width:200px">
                                                                     <option value="" selected="selected">Type Selection</option>
-                                                                    <? 
+                                                                    <?php 
 											include('../inc/custype.php');
 											?>
                                                                   </select></td>
@@ -393,7 +393,7 @@ $userid = imaxgetcookie('ssmuserid');?>
                                                                 <td bgcolor="#edf4ff">Category:</td>
                                                                 <td bgcolor="#edf4ff"><select name="category" class="swiftselect" id="category"  style="width:200px">
                                                                     <option value="">Category Selection</option>
-                                                                    <? 
+                                                                    <?php 
 											include('../inc/businesscategory.php');
 											?>
                                                                   </select></td>

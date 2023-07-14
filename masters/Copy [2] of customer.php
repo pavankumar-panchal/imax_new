@@ -4,7 +4,7 @@
 <script language="javascript" src="../functions/getdistrictjs.php"></script>
 <script language="javascript" src="../functions/javascripts.php"></script>
 
-<? $userid = $_COOKIE['userid'];?>
+<?php $userid = $_COOKIE['userid'];?>
 <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#ffffff">
   <tr>
     <td width="23%" valign="top" style="border-right:#1f4f66 1px solid;border-bottom:#1f4f66 1px solid;" ><table width="100%" border="0" cellspacing="0" cellpadding="0" id="mainwrap">
@@ -158,7 +158,7 @@
       <td align="left" valign="top" height="10">Region:</td>
       <td align="left" valign="top" height="10"> <select name="region2" class="swiftselect" id="region2">
           <option value="">ALL</option>
-          <? 
+          <?php 
 											include('../inc/region.php');
 											?>
         </select>      </td>
@@ -167,7 +167,7 @@
       <td align="left" valign="top" height="10" >State:</td>
       <td align="left" valign="top" height="10"><select name="state2" class="swiftselect" id="state2" onchange="getdistrict('districtcodedisplaysearch',this.value);" onkeyup="getdistrict('districtcodedisplaysearch',this.value);">
           <option value="">ALL</option>
-          <? include('../inc/state.php'); ?>
+          <?php include('../inc/state.php'); ?>
       </select></td>
     </tr>
     <tr>
@@ -187,7 +187,7 @@
                                                  </tr>
                                                  <tr>
                                                    <td colspan="3" valign="top" bgcolor="#FFFFFF" style="border:solid 1px #A8A8A8"><div style="height:220px; overflow:scroll">
-                                                     <? include('../inc/productdetails.php'); ?>
+                                                     <?php include('../inc/productdetails.php'); ?>
                                                    </div></td>
                                                  </tr>
                                                  <tr>
@@ -266,7 +266,7 @@
                                             <td align="left" valign="top" bgcolor="#EDF4FF">State:</td>
                                             <td align="left" valign="top" bgcolor="#EDF4FF"><select name="state" class="swiftselect-mandatory" id="state" onchange="getdistrict('districtcodedisplay',this.value);" onkeyup="getdistrict('districtcodedisplay',this.value);">
                                                 <option value="">Select A State</option>
-                                                <? include('../inc/state.php'); ?>
+                                                <?php include('../inc/state.php'); ?>
                                               </select></td>
                                           </tr>
                                           <tr bgcolor="#edf4ff">
@@ -283,7 +283,7 @@
                                             <td align="left" valign="top" bgcolor="#F7FAFF">Region:</td>
                                             <td align="left" valign="top" bgcolor="#F7FAFF"><select name="region" class="swiftselect-mandatory" id="region">
                                                 <option value="">Select A Region</option>
-                                                <? 
+                                                <?php 
 											include('../inc/region.php');
 											?>
                                               </select></td>
@@ -293,7 +293,7 @@
                                             <td align="left" valign="top" bgcolor="#F7FAFF">Current Dealer:</td>
                                             <td align="left" valign="top" bgcolor="#F7FAFF"><select name="currentdealer" class="swiftselect-mandatory" id="currentdealer" style="width:180px;">
                                                 <option value="">Make A Selection</option>
-                                                <? 
+                                                <?php 
 											include('../inc/firstdealer.php');
 											?>
                                               </select></td>
@@ -346,7 +346,7 @@
                                             <td align="left" valign="top" bgcolor="#EDF4FF">Type:</td>
                                             <td align="left" valign="top" bgcolor="#EDF4FF"><select name="type" class="swiftselect" id="type">
                                                 <option value="" selected="selected">Type Selection</option>
-                                                  <? 
+                                                  <?php 
 											include('../inc/custype.php');
 											?>
                                               </select></td>
@@ -355,7 +355,7 @@
                                             <td align="left" valign="top" bgcolor="#F7FAFF">Category:</td>
                                             <td align="left" valign="top" bgcolor="#F7FAFF"><select name="category" class="swiftselect" id="category">
                                                 <option value="">Category Selection</option>
-                                                <? 
+                                                <?php 
 											include('../inc/category.php');
 											?>
                                               </select></td>
@@ -392,12 +392,12 @@
                                             <td height="25" colspan="2" align="left" valign="middle"><div id="form-error"></div></td>
                                           </tr>
                                           <tr>
-                                            <td width="43%" height="40" align="left" valign="middle" class="resendtext"><? if($userid == 1){ ?><div id="resendmail" style="display:none"><a   onclick="resendwelcomeemail();">Resend welcome Email</a></div><? } ?></td>
-                                            <td width="57%" height="35" align="right" valign="middle"><? if($permissionarray[15] == 'no'){ ?><input name="new" type="button" class= "swiftchoicebuttondisabled" id="new" value="New" onclick="newentry(); document.getElementById('form-error').innerHTML = '';" /><? } else {?>
-                                            <input name="new" type="button" class= "swiftchoicebutton" id="new" value="New" onclick="newentry(); document.getElementById('form-error').innerHTML = '';cleargrid();" /><? }?>  &nbsp;
-                                              &nbsp;<? if($permissionarray[15] == 'no'){ ?>
-                                              <input name="save" type="button" class="swiftchoicebuttondisabled" id="save" value="Save" onclick="formsubmit('save');" /><? } else {?> <input name="save" type="button" class="swiftchoicebutton" id="save" value="Save" onclick="formsubmit('save');" />
-                                            <? }?>  &nbsp;
+                                            <td width="43%" height="40" align="left" valign="middle" class="resendtext"><?php if($userid == 1){ ?><div id="resendmail" style="display:none"><a   onclick="resendwelcomeemail();">Resend welcome Email</a></div><?php } ?></td>
+                                            <td width="57%" height="35" align="right" valign="middle"><?php if($permissionarray[15] == 'no'){ ?><input name="new" type="button" class= "swiftchoicebuttondisabled" id="new" value="New" onclick="newentry(); document.getElementById('form-error').innerHTML = '';" /><?php } else {?>
+                                            <input name="new" type="button" class= "swiftchoicebutton" id="new" value="New" onclick="newentry(); document.getElementById('form-error').innerHTML = '';cleargrid();" /><?php }?>  &nbsp;
+                                              &nbsp;<?php if($permissionarray[15] == 'no'){ ?>
+                                              <input name="save" type="button" class="swiftchoicebuttondisabled" id="save" value="Save" onclick="formsubmit('save');" /><?php } else {?> <input name="save" type="button" class="swiftchoicebutton" id="save" value="Save" onclick="formsubmit('save');" />
+                                            <?php }?>  &nbsp;
                                               <input name="delete" type="submit" class="swiftchoicebuttondisabled" id="delete" value="Delete" disabled="disabled" onclick="formsubmit('delete');"/>
                                               &nbsp;
                                              </td>
