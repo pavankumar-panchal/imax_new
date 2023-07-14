@@ -5,14 +5,14 @@ ini_set('display_errors', 1);
 include('../inc/includefiles.php');
 include('../inc/checktype.php');
 include('../inc/teamchart.php');
-/*if($_GET['a_link'] == 'logout')
-  include('../inc/logout.php');*/
+if($_GET['a_link'] == 'logout')
+  include('../inc/logout.php');
 
 $localdate = datetimelocal('d-m-Y');
 $localtime = datetimelocal('H:i:s');
 $monthnum = date('n');
 // logged in Users
-// include('../inc/membersloggedin.php');
+include('../inc/membersloggedin.php');
 //values for in and out time - Last Working Day
 $fetch = runmysqlqueryfetch("SELECT MAX(logindate) AS yintimedate FROM ssm_usertime WHERE userid = '" . $user . "' AND logindate <> CURDATE() AND logintype = 'IN'");
 if ($fetch['yintimedate'] <> '' && $fetch['yintimedate'] <> '0000-00-00')
@@ -464,7 +464,7 @@ $attendanceCal = attendanceCalendardashboard(date('m'), $year, $user);
                                                           </tr>
                                                           <tr>
                                                             <td>
-                                                              <?php echo ($membergrid); ?>
+                                                              <?php echo $membergrid; ?>
                                                             </td>
                                                           </tr>
                                                           <tr>
