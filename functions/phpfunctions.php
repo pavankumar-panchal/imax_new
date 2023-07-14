@@ -89,6 +89,7 @@ function runmysqlquery($query)
 	mysqli_select_db($newconnection, $dbname) or die("Cannot connect to database");
 	set_time_limit(3600);
 	//Run the query
+
 	$result = mysqli_query($newconnection, $query) or die(" run Query Failed in Runquery function1." . $query); //;
 
 	//Return the result
@@ -149,20 +150,34 @@ function runmysqlqueryfetch_old($query)
 
 /* -------------------- To change the date format from DD-MM-YYYY to YYYY-MM-DD or reverse -------------------- */
 
+// function changedateformat($date)
+// {
+//     if ($date <> "0000-00-00") {
+//         if (strpos($date, " "))
+//             $result = split(" ", $date);
+//         else
+//             $result = split("[:./-]", $date);
+//         $date = $result[2] . "-" . $result[1] . "-" . $result[0];
+//     } else {
+//         $date = "";
+//     }
+//     return $date;
+// }
+
 function changedateformat($date)
 {
-    if ($date <> "0000-00-00") {
-        if (strpos($date, " "))
-            $result = split(" ", $date);
-        else
-            $result = split("[:./-]", $date);
+    if ($date !== "0000-00-00") {
+        if (strpos($date, " ")) {
+            $result = explode(" ", $date);
+        } else {
+            $result = preg_split("/[:.\/-]/", $date);
+        }
         $date = $result[2] . "-" . $result[1] . "-" . $result[0];
     } else {
         $date = "";
     }
     return $date;
 }
-
 
 
 
@@ -233,7 +248,7 @@ function changetime($time)
 	return $time;
 }
 
-/*function runaccessqueryco($query)
+function runaccessqueryco($query)
 {
 	global $codsnname, $codsnuser, $codsnpwd;
 
@@ -249,7 +264,7 @@ function changetime($time)
 	//Close the database connection
 	odbc_close($connection);
 }
-*/
+
 function runaccessquerycsd($query)
 {
 	global $csddsnname, $csddsnuser, $csddsnpwd;

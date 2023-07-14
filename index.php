@@ -27,7 +27,7 @@ if (isset($_POST["login"])) {
 		// $query = "SELECT username,AES_DECRYPT(loginpassword,'imaxpasswordkey') as loginpassword , existinguser , 	
 		// 	locationname,type  FROM ssm_users WHERE username = '" . $username . "' and disablelogin = 'no'";
 
-		$query = "SELECT username, loginpassword, existinguser, locationname, type FROM ssm_users 
+		$query = "SELECT username, loginpassword, existinguser, locationname, type,emergencyremarks FROM ssm_users 
 WHERE username = '" . $username . "' AND disablelogin = 'no'";
 
 
@@ -42,6 +42,7 @@ WHERE username = '" . $username . "' AND disablelogin = 'no'";
 			$locationname = $fetch['locationname'];
 			$type = $fetch['type'];
 			$logintype = 'IN';
+			$remark=$fetch['energencyremarks'];
 
 			if ($existinguser == 'no')
 				$message = '<span class="error-message"> This User id not allowed to login </span>';
@@ -53,7 +54,7 @@ WHERE username = '" . $username . "' AND disablelogin = 'no'";
 
 				imaxcreatecookie('ssmuserid', $userid);
 
-				$query = "INSERT INTO ssm_usertime(userid,logindate,logintime,type,locationname,logintype) values('" . $userid . "','" . changedateformat($date) . "','" . datetimelocal('H:i') . "','" . $type . "','" . $locationname . "','" . $logintype . "')";
+				$query = "INSERT INTO ssm_usertime(userid,logindate,logintime,type,locationname,logintype,remarks) values('" . $userid . "','" . changedateformat($date) . "','" . datetimelocal('H:i') . "','" . $type . "','" . $locationname . "','" . $logintype . "', '".$remark."')";
 				$result = runmysqlquery($query);
 
 				$url = './home/index.php?a_link=home_dashboard';
