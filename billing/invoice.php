@@ -41,7 +41,7 @@ else
                         <img src="../images/userid-bg.gif" width="14" height="16" border="0" align="absmiddle" /></a></span>
                         <input type="hidden" name="lastslno" id="lastslno" value="" />
                         <input type="hidden" name="cusid" id="cusid" value="" />
-                        <input type="hidden" name="loggeduser" id="loggeduser" value="<? echo($user); ?>"/>
+                        <input type="hidden" name="loggeduser" id="loggeduser" value="<?php echo($user); ?>"/>
                         <input type="hidden" name="loggedusertype" id="loggedusertype" value="<? echo($usertype); ?>"/>
                         <input type="hidden" name="endtime" id="endtime" value=""/>
                         <input type="hidden" name="loggedreportingauthority" id="loggedreportingauthority" value="<? echo($reportingauthority ); ?>"/>

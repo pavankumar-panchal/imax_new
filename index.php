@@ -24,14 +24,9 @@ if (isset($_POST["login"])) {
 	if ($username == '' or $password == '')
 		$message = '<span class="error-message"> Enter the User Name or Password </span>';
 	else {
-		// $query = "SELECT username,AES_DECRYPT(loginpassword,'imaxpasswordkey') as loginpassword , existinguser , 	
-		// 	locationname,type  FROM ssm_users WHERE username = '" . $username . "' and disablelogin = 'no'";
+		$query = "SELECT username,AES_DECRYPT(loginpassword,'imaxpasswordkey') as loginpassword , existinguser , 	
+			locationname,type  FROM ssm_users WHERE username = '" . $username . "' and disablelogin = 'no'";
 
-		$query = "SELECT username, loginpassword, existinguser, locationname, type,emergencyremarks FROM ssm_users 
-WHERE username = '" . $username . "' AND disablelogin = 'no'";
-
-
-		// echo $query;
 		$result = mysqli_query($newconnection, $query);
 		if (mysqli_num_rows($result) > 0) {
 			$fetch = runmysqlqueryfetch($query);

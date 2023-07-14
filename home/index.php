@@ -224,7 +224,7 @@ $attendanceCal = attendanceCalendardashboard(date('m'), $year, $user);
                     </table>
                   </td>
                   <td valign="top" class="content-box"><input name="navigationtabcount" id="navigationtabcount"
-                      type="hidden" value="<? echo ($navigationtabcount); ?>" />
+                      type="hidden" value="<?php echo ($navigationtabcount); ?>" />
                     <?php if (!$_GET['a_link'] || $_GET['a_link'] == 'home_dashboard') { ?>
                       <script type="text/javascript" src="http://www.google.com/jsapi"></script>
                       <script language="javascript" src="../functions/annotatedtimeline.js"

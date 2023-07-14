@@ -10,7 +10,7 @@ else
 <div id="contentdiv" style="display:block;">
 <table width="100%" border="0" cellspacing="0" cellpadding="4">
   <tr>
-    <td class="content-header">Attendance > <? echo(ucwords(strtolower($loggedusername))); ?></td>
+    <td class="content-header">Attendance > <?php echo(ucwords(strtolower($loggedusername))); ?></td>
   </tr>
   <tr>
     <td></td>
@@ -31,12 +31,12 @@ else
                     <td valign="top">Executive Name:</td>
                     <td valign="top"><select name="userid" id="userid" class="swiftselect">
                         <option value="" selected="selected">Make A Selection</option>
-                        <? include('../inc/a-useridselectionreports.php'); ?>
+                        <?php include('../inc/a-useridselectionreports.php'); ?>
                       </select>
                         <input type="hidden" name="lastslno" id="lastslno" value="" />
-                        <input type="hidden" name="loggeduser" id="loggeduser" value="<? echo($user); ?>"/>
-                        <input type="hidden" name="loggedusertype" id="loggedusertype" value="<? echo($usertype); ?>"/>
-                        <input type="hidden" name="loggedreportingauthority" id="loggedreportingauthority" value="<? echo($reportingauthority ); ?>"/></td>
+                        <input type="hidden" name="loggeduser" id="loggeduser" value="<?php echo($user); ?>"/>
+                        <input type="hidden" name="loggedusertype" id="loggedusertype" value="<?php echo($usertype); ?>"/>
+                        <input type="hidden" name="loggedreportingauthority" id="loggedreportingauthority" value="<?php echo($reportingauthority ); ?>"/></td>
                   </tr>
 
                 </table></td>
@@ -66,7 +66,7 @@ else
                     <td valign="top">Year:</td>
                     <td valign="top"><select name="year" id="year" class="swiftselect">
                       <option value="">Make A Selection</option>
-                      <?  
+                      <?php  
 					  $query = "SELECT DISTINCT LEFT(logindate,4) AS year FROM ssm_usertime WHERE LEFT(logindate,4) <>'0000' ORDER BY LEFT(logindate,4) desc;";
 					  $result = runmysqlquery($query);
 					  while($fetch = mysqli_fetch_array($result))
@@ -134,4 +134,4 @@ else
   </tr>
 </table>
 </div>
-<? } ?>
+<?php } ?>

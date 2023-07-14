@@ -31,21 +31,21 @@ else
                       <td valign="top">From Date:</td>
                       <td valign="top"><input name="fromdate" type="text" class="swifttext" id="DPC_fromdate" size="30" autocomplete="off" value="<? echo date('01-m-Y'); ?>"  style="background:#FEFFE6;" />
                         <input type="hidden" name="lastslno" id="lastslno" value="" />
-                        <input type="hidden" name="loggeduser" id="loggeduser" value="<? echo($user); ?>"/>
-                        <input type="hidden" name="loggedusertype" id="loggedusertype" value="<? echo($usertype); ?>"/>
-                        <input type="hidden" name="loggedreportingauthority" id="loggedreportingauthority" value="<? echo($reportingauthority ); ?>"/></td></tr>
+                        <input type="hidden" name="loggeduser" id="loggeduser" value="<?php echo($user); ?>"/>
+                        <input type="hidden" name="loggedusertype" id="loggedusertype" value="<?php echo($usertype); ?>"/>
+                        <input type="hidden" name="loggedreportingauthority" id="loggedreportingauthority" value="<?php echo($reportingauthority ); ?>"/></td></tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top">To Date:</td>
-                      <td valign="top"><input name="todate" type="text" class="swifttext" id="DPC_todate" size="30" autocomplete="off" value="<? echo date('d-m-Y'); ?>"   style="background:#FEFFE6;" /></td>
+                      <td valign="top"><input name="todate" type="text" class="swifttext" id="DPC_todate" size="30" autocomplete="off" value="<?php echo date('d-m-Y'); ?>"   style="background:#FEFFE6;" /></td>
                     </tr>
                     <tr bgcolor="#f7faff">
                       <td valign="top">User Name:</td>
                       <td valign="top"><select name="userid" id="userid" class="swiftselect">
-                        <? if($usertype == 'MANAGEMENT' || $usertype == 'ADMIN' || $usertype == 'TEAMLEADER') 
+                        <?php if($usertype == 'MANAGEMENT' || $usertype == 'ADMIN' || $usertype == 'TEAMLEADER') 
 						{ ?>
 <!--                      <option value="">ALL</option>
--->                      <? include('../inc/useridselectionreports.php'); } else { ?>
-                        <?  include('../inc/useridselectionreports.php'); } ?>
+-->                      <?php include('../inc/useridselectionreports.php'); } else { ?>
+                        <?php  include('../inc/useridselectionreports.php'); } ?>
                       </select></td>
                     </tr>
                     <tr bgcolor="#f7faff">
@@ -83,4 +83,4 @@ else
   </tr>
 </table>
 </div>
-<? } ?>
+<?php } ?>
