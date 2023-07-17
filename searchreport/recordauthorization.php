@@ -492,15 +492,19 @@ LEFT JOIN ssm_category on ssm_category.slno =ssm_invoice.authorizedgroup WHERE d
 		$localdate = datetimelocal('Ymd');
 		$localtime = datetimelocal('His');
 		$filebasename = "S_RA".$localdate."-".$localtime.".xls";
-		$filepath = $_SERVER['DOCUMENT_ROOT'].'/mywork/new_imax/imax_new/uploads/'.$filebasename;
-		$downloadlink = 'http://'.$_SERVER['HTTP_HOST'].'/mywork/new_imax/imax_new//uploads/'.$filebasename;
+		// $filebasename="S_RA.ods";
+		// $filepath = $_SERVER['DOCUMENT_ROOT'].'/ywork/new_imax/imax_new/uploads/'.$filebasename;
+		// $downloadlink = 'http://'.$_SERVER['HTTP_HOST'].'/mywork/new_imax/imax_new/uploads/'.$filebasename;
+		$filepath =  '../uploads/' .$filebasename;
 		
 		$fp = fopen($filepath,"wa+");
 		if($fp)
 		{
+
 			fwrite($fp,$grid);
 			downloadfile($filepath);
 			fclose($fp);
 		} 
+
 
 ?>
