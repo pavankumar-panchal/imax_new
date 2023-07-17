@@ -1,5 +1,5 @@
-<link rel="stylesheet" type="text/css" href="../style/main.css?dummy = <? echo (rand());?>">
-<script language="javascript" src="../functions/callregister.js?dummy = <? echo (rand());?>" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="../style/main.css?dummy = <?php echo (rand());?>">
+<script language="javascript" src="../functions/callregister.js?dummy = <?php echo (rand());?>" type="text/javascript"></script>
 <div id="contentdiv" style="display:block;">
 <table width="100%" border="0" cellspacing="0" cellpadding="4">
   <tr>
@@ -39,10 +39,10 @@ Inhouse</label><label>
 <input name='check[]3' type='checkbox' id="check[]" value='Requirement'/>
 Requirements</label><a href="javascript:void(0);" onClick="getcustomer(); getcustomerfunc(); registernameload('call')" style="cursor:pointer"> <img src="../images/userid-bg.gif" width="14" height="16" border="0" align="absmiddle" /></a>
                         <input type="hidden" name="lastslno" id="lastslno" value="" />
-                          <input type="hidden" name="loggeduser" id="loggeduser" value="<? echo($user); ?>"/>
-                          <input type="hidden" name="loggedusertype" id="loggedusertype" value="<? echo($usertype); ?>"/>
+                          <input type="hidden" name="loggeduser" id="loggeduser" value="<?php echo($user); ?>"/>
+                          <input type="hidden" name="loggedusertype" id="loggedusertype" value="<?php echo($usertype); ?>"/>
                           <input type="hidden" name="endtime" id="endtime" value=""/>
-                          <input type="hidden" name="loggedreportingauthority" id="loggedreportingauthority" value="<? echo($reportingauthoritytype ); ?>"/></td>
+                          <input type="hidden" name="loggedreportingauthority" id="loggedreportingauthority" value="<?php echo($reportingauthoritytype ); ?>"/></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top">From Date:</td>
@@ -56,7 +56,7 @@ Requirements</label><a href="javascript:void(0);" onClick="getcustomer(); getcus
                       <td valign="top">Entered By:</td>
                       <td valign="top"><select name="userid" id="userid" class="swiftselect">
                         <option value="" selected="selected">All</option>
-                        <? include('../inc/useridselectionreports.php'); ?>
+                        <?php include('../inc/useridselectionreports.php'); ?>
                       </select></td>
                     </tr>
                     <tr bgcolor="#f7faff">
@@ -159,7 +159,7 @@ Outstation Employee</label></td>
                       <td valign="top">Product Name:</td>
                       <td valign="top"><select name="s_productname" class="swiftselect" id="s_productname">
                         <option value="">All</option>
-                        <? include('../inc/productname.php'); ?>
+                        <?php include('../inc/productname.php'); ?>
                       </select></td>
                     </tr>
                 </table></td>
@@ -182,7 +182,7 @@ Outstation Employee</label></td>
                       <td valign="top">Transferred To:</td>
                       <td valign="top"><select name="s_transferredto" id="s_transferredto" class="swiftselect">
                         <option value="" selected="selected">All</option>
-                        <? include('../inc/useridselection.php'); ?>
+                        <?php include('../inc/useridselection.php'); ?>
                         <option value="registration">Registration Department</option>
                         <option value="others">Others</option>
                       </select></td>
@@ -191,7 +191,7 @@ Outstation Employee</label></td>
                       <td valign="top">Entered By:</td>
                       <td valign="top"><select name="s_userid" id="s_userid" class="swiftselect">
                         <option value="" selected="selected">All</option>
-                        <? include('../inc/useridselection.php'); ?>
+                        <?php include('../inc/useridselection.php'); ?>
                       </select></td>
                     </tr>
                     <tr bgcolor="#f7faff">
@@ -294,7 +294,7 @@ Nor Both</label> </td>
   <tr>
     <td><div id="gc-form-error"></div></td>
   </tr>
-  <? include('../inc/nameload.php'); ?>
+  <?php include('../inc/nameload.php'); ?>
 </table>
 </div>
 
@@ -307,6 +307,6 @@ Nor Both</label> </td>
   <tr>
     <td><div id="gq-form-error"></div></td>
   </tr>
-  <? include('../inc/questionload.php'); ?>
+  <?php include('../inc/questionload.php'); ?>
 </table>
 </div>

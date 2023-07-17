@@ -1,5 +1,5 @@
-<link rel="stylesheet" type="text/css" href="../style/main.css?dummy = <? echo (rand());?>">
-<script language="javascript" src="../functions/requirement-statistics.js?dummy = <? echo (rand());?>" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="../style/main.css?dummy = <?php echo (rand());?>">
+<script language="javascript" src="../functions/requirement-statistics.js?dummy = <?php echo (rand());?>" type="text/javascript"></script>
 <div id="contentdiv" style="display:block;">
 <table width="100%" border="0" cellspacing="0" cellpadding="4">
   <tr>
@@ -22,19 +22,19 @@
                 <td valign="top" style="border-right:1px solid #d1dceb;"><table width="100%" border="0" cellspacing="0" cellpadding="3">
                     <tr bgcolor="#f7faff">
                       <td valign="top">From Date:</td>
-                      <td valign="top"><input name="fromdate" type="text" class="swifttext" id="DPC_fromdate" size="30" autocomplete="off"  style="background:#FEFFE6;" value="<? datetimelocal('d-m-Y'); ?>" />
+                      <td valign="top"><input name="fromdate" type="text" class="swifttext" id="DPC_fromdate" size="30" autocomplete="off"  style="background:#FEFFE6;" value="<?php datetimelocal('d-m-Y'); ?>" />
                         <input type="hidden" id="hiddenlastslno" name="hiddenlastslno" value=""  /></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top">To Date:</td>
-                      <td valign="top"><input name="todate" type="text" class="swifttext" id="DPC_todate" size="30" autocomplete="off"   style="background:#FEFFE6;" value="<? datetimelocal('d-m-Y'); ?>" /></td>
+                      <td valign="top"><input name="todate" type="text" class="swifttext" id="DPC_todate" size="30" autocomplete="off"   style="background:#FEFFE6;" value="<?php datetimelocal('d-m-Y'); ?>" /></td>
                     </tr>
                     <tr bgcolor="#f7faff">
                       <td valign="top" bgcolor="#EDF4FF">Product group:</td>
                       <td valign="top" bgcolor="#EDF4FF">
                         <span id="filterprdgroupdisplay">
                       <!-- Details are in javascript.js page as a function prdgroup();-->
-						<? include('../inc/productgroup.php');  
+						<?php include('../inc/productgroup.php');  
 							productname('s_productgroup','color');
                         ?>
                        </span>
@@ -44,7 +44,7 @@
                       <td valign="top">Product Name:</td>
                       <td valign="top"><select name="productname" id="productname" class="swiftselect"  style="background:#FEFFE6;">
                         <option value="">Make A Selection</option>
-                         <? include('../inc/productfilter.php'); ?>
+                         <?php include('../inc/productfilter.php'); ?>
                       </select></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
@@ -65,11 +65,11 @@
                     <tr bgcolor="#edf4ff">
                       <td valign="top">Entered By:</td>
                       <td valign="top"><select name="userid" id="userid" class="swiftselect">
-                        <? if($usertype == 'MANAGEMENT' || $usertype == 'ADMIN' || $usertype == 'TEAMLEADER') 
+                        <?php if($usertype == 'MANAGEMENT' || $usertype == 'ADMIN' || $usertype == 'TEAMLEADER') 
 						{ ?>
                         <option value="">ALL</option>
-                        <? include('../inc/useridselectionreports.php'); } else { ?>
-                        <?  include('../inc/useridselectionreports.php'); } ?>
+                        <?php include('../inc/useridselectionreports.php'); } else { ?>
+                        <?php  include('../inc/useridselectionreports.php'); } ?>
                       </select></td>
                     </tr>
                     <tr bgcolor="#f7faff">
@@ -138,7 +138,7 @@
   <tr>
     <td><div id="gc-form-error"></div></td>
   </tr>
-  <? include('../inc/nameload.php'); ?>
+  <?php include('../inc/nameload.php'); ?>
 </table>
 </div>
 
@@ -151,6 +151,6 @@
   <tr>
     <td><div id="gq-form-error"></div></td>
   </tr>
-  <? include('../inc/questionload.php'); ?>
+  <?php include('../inc/questionload.php'); ?>
 </table>
 </div>

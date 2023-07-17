@@ -28,6 +28,8 @@ $newconnection = mysqli_connect($dbhost, $dbuser, $dbpwd, $dbname) or die("Canno
 
 $newconnection_old = mysqli_connect($dbhost_old, $dbuser_old, $dbpwd_old, $dbname_old) or die("Cannot connect to Mysql server host");
 
+
+
 /* -------------------- Get local server time [by adding 5.30 hours] -------------------- */
 function datetimelocal($format)
 {
@@ -170,18 +172,19 @@ function runmysqlqueryfetch_old($query)
 
 function changedateformat($date)
 {
-	if ($date !== "0000-00-00") {
-		if (strpos($date, " ")) {
-			$result = explode(" ", $date);
-		} else {
-			$result = preg_split("/[:.\/-]/", $date);
-		}
-		$date = $result[2] . "-" . $result[1] . "-" . $result[0];
-	} else {
-		$date = "";
-	}
-	return $date;
+    if ($date !== null && $date !== "0000-00-00") {
+        if (strpos($date, " ")) {
+            $result = explode(" ", $date);
+        } else {
+            $result = preg_split("/[:.\/-]/", $date);
+        }
+        $date = $result[2] . "-" . $result[1] . "-" . $result[0];
+    } else {
+        $date = "";
+    }
+    return $date;
 }
+
 
 
 
@@ -523,11 +526,6 @@ function attendanceCalendardashboard($month, $year, $user)
 }
 
 
-
-
-
-
-
 function dorunquery($query)
 {
 	$result = runmysqlqueryfetch($query);
@@ -692,6 +690,7 @@ function getpagelink($linkvalue)
 			break;
 	}
 }
+
 function getpagetitle($linkvalue)
 {
 	switch ($linkvalue) {
@@ -1300,4 +1299,6 @@ function displaydatareport($slno, $fromdate, $todate)
 }
 
 
+
 ?>
+

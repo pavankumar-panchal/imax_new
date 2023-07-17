@@ -1,5 +1,5 @@
-<link rel="stylesheet" type="text/css" href="../style/main.css?dummy = <? echo (rand());?>">
-<script language="javascript" src="../functions/onsite-statistics.js?dummy = <? echo (rand());?>" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="../style/main.css?dummy = <?php echo (rand());?>">
+<script language="javascript" src="../functions/onsite-statistics.js?dummy = <?php echo (rand());?>" type="text/javascript"></script>
 <div id="contentdiv" style="display:block;">
 <table width="100%" border="0" cellspacing="0" cellpadding="4">
   <tr>
@@ -52,7 +52,7 @@
   <tr>
     <td><div id="gc-form-error"></div></td>
   </tr>
-  <? include('../inc/nameload.php'); ?>
+  <?php include('../inc/nameload.php'); ?>
 </table>
 </div>
 
@@ -65,7 +65,7 @@
   <tr>
     <td><div id="gq-form-error"></div></td>
   </tr>
-  <? include('../inc/questionload.php'); ?>
+  <?php include('../inc/questionload.php'); ?>
 </table>
 </div>
 

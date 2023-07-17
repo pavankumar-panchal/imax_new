@@ -1,6 +1,6 @@
-<link rel="stylesheet" type="text/css" href="../style/main.css?dummy = <? echo (rand());?>">
+<link rel="stylesheet" type="text/css" href="../style/main.css?dummy = <?php echo (rand());?>">
 <script type='text/javascript' src='http://www.google.com/jsapi'></script>
-<script type='text/javascript' src='../functions/annotatedtimeline-adv.js?dummy = <? echo (rand());?>'></script>
+<script type='text/javascript' src='../functions/annotatedtimeline-adv.js?dummy = <?php echo (rand());?>'></script>
 <div id="contentdiv" style="display:block;">
 <table width="100%" border="0" cellspacing="0" cellpadding="4">
   <tr>
@@ -51,24 +51,24 @@
               <input type="checkbox" name="register[]" id="skype" value="skype">
               Skype </label>
 <input type="hidden" name="lastslno" id="lastslno" value="" />
-                          <input type="hidden" name="loggeduser" id="loggeduser" value="<? echo($user); ?>"/>
-                          <input type="hidden" name="loggedusertype" id="loggedusertype" value="<? echo($usertype); ?>"/>
+                          <input type="hidden" name="loggeduser" id="loggeduser" value="<?php echo($user); ?>"/>
+                          <input type="hidden" name="loggedusertype" id="loggedusertype" value="<?php echo($usertype); ?>"/>
                           <input type="hidden" name="endtime" id="endtime" value=""/>
-                          <input type="hidden" name="loggedreportingauthority" id="loggedreportingauthority" value="<? echo($reportingauthoritytype ); ?>"/></td>
+                          <input type="hidden" name="loggedreportingauthority" id="loggedreportingauthority" value="<?php echo($reportingauthoritytype ); ?>"/></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top">From Date:</td>
-                      <td valign="top"><input name="fromdate" type="text" class="swifttext" id="DPC_fromdate" size="30" autocomplete="off"  style="background:#FEFFE6;" value="<? datetimelocal('d-m-Y'); ?>" /></td>
+                      <td valign="top"><input name="fromdate" type="text" class="swifttext" id="DPC_fromdate" size="30" autocomplete="off"  style="background:#FEFFE6;" value="<?php datetimelocal('d-m-Y'); ?>" /></td>
                     </tr>
                     <tr bgcolor="#f7faff">
                       <td valign="top">To Date:</td>
-                      <td valign="top"><input name="todate" type="text" class="swifttext" id="DPC_todate" size="30" autocomplete="off"  style="background:#FEFFE6;" value="<? datetimelocal('d-m-Y'); ?>" /></td>
+                      <td valign="top"><input name="todate" type="text" class="swifttext" id="DPC_todate" size="30" autocomplete="off"  style="background:#FEFFE6;" value="<?php datetimelocal('d-m-Y'); ?>" /></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top">Entered By:</td>
                       <td valign="top"><select name="userid" id="userid" class="swiftselect">                     	
                         <option value="">ALL</option>
-                        <? include('../inc/useridselectionreports.php'); ?>
+                        <?php include('../inc/useridselectionreports.php'); ?>
                         </select></td>
                     </tr>
                     <tr bgcolor="#f7faff">
@@ -103,7 +103,7 @@ Dealers</label>
                       <td valign="top">Support Unit:</td>
                       <td valign="top"><select name="supportunit" class="swiftselect" id="supportunit">
                         <option value="">ALL</option>
-                        <? include('../inc/supportunit.php'); ?>
+                        <?php include('../inc/supportunit.php'); ?>
                       </select></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
@@ -156,7 +156,7 @@ Both</label>
   <tr>
     <td><div id="gc-form-error"></div></td>
   </tr>
-  <? include('../inc/nameload.php'); ?>
+  <?php include('../inc/nameload.php'); ?>
 </table>
 </div>
 
@@ -169,6 +169,6 @@ Both</label>
   <tr>
     <td><div id="gq-form-error"></div></td>
   </tr>
-  <? include('../inc/questionload.php'); ?>
+  <?php include('../inc/questionload.php'); ?>
 </table>
 </div>

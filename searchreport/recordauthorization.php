@@ -20,6 +20,17 @@ ini_set('memory_limit', '1024M');
 		$s_statuspiece = ($s_status == "")?(""):(" AND status = '".$s_status."'");
 		$s_useridpiece = ($s_userid == "")?(""):(" AND userid  = '".$s_userid."'");
 		$s_compliantidpiece = ($s_compliantid == "")?(""):(" AND compliantid  LIKE '%".$s_compliantid."%'");
+
+     
+	
+		// recordauthorization.php
+	
+		
+
+
+			if (isset($_POST['databasefield'])) 
+			$databasefield = $_POST['databasefield'];
+				
 		switch($databasefield)
 		{
 /*-----------------------------------------------------------------------------------------------------------------------------------*/				
@@ -481,8 +492,8 @@ LEFT JOIN ssm_category on ssm_category.slno =ssm_invoice.authorizedgroup WHERE d
 		$localdate = datetimelocal('Ymd');
 		$localtime = datetimelocal('His');
 		$filebasename = "S_RA".$localdate."-".$localtime.".xls";
-		$filepath = $_SERVER['DOCUMENT_ROOT'].'/support/uploads/'.$filebasename;
-		$downloadlink = 'http://'.$_SERVER['HTTP_HOST'].'/support/uploads/'.$filebasename;
+		$filepath = $_SERVER['DOCUMENT_ROOT'].'/mywork/new_imax/imax_new/uploads/'.$filebasename;
+		$downloadlink = 'http://'.$_SERVER['HTTP_HOST'].'/mywork/new_imax/imax_new//uploads/'.$filebasename;
 		
 		$fp = fopen($filepath,"wa+");
 		if($fp)
@@ -491,4 +502,5 @@ LEFT JOIN ssm_category on ssm_category.slno =ssm_invoice.authorizedgroup WHERE d
 			downloadfile($filepath);
 			fclose($fp);
 		} 
+
 ?>

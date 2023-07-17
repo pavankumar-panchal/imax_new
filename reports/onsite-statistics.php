@@ -1,5 +1,5 @@
-<link rel="stylesheet" type="text/css" href="../style/main.css?dummy = <? echo (rand());?>">
-<script language="javascript" src="../functions/onsite-statistics.js?dummy = <? echo (rand());?>" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="../style/main.css?dummy = <?php echo (rand());?>">
+<script language="javascript" src="../functions/onsite-statistics.js?dummy = <?php echo (rand());?>" type="text/javascript"></script>
 <div id="contentdiv" style="display:block;">
 <table width="100%" border="0" cellspacing="0" cellpadding="4">
   <tr>
@@ -22,12 +22,12 @@
                 <td valign="top" style="border-right:1px solid #d1dceb;"><table width="100%" border="0" cellspacing="0" cellpadding="3">
                     <tr bgcolor="#f7faff">
                       <td valign="top">From Date:</td>
-                      <td valign="top"><input name="fromdate" type="text" class="swifttext" id="DPC_fromdate" size="30" autocomplete="off"  style="background:#FEFFE6;"  value="<? echo(datetimelocal('d-m-Y')); ?>"/>
+                      <td valign="top"><input name="fromdate" type="text" class="swifttext" id="DPC_fromdate" size="30" autocomplete="off"  style="background:#FEFFE6;"  value="<?php echo(datetimelocal('d-m-Y')); ?>"/>
                         <input type="hidden" id="hiddenlastslno" name="hiddenlastslno" value=""  />                        <br /></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top">To Date:</td>
-                      <td valign="top"><input name="todate" type="text" class="swifttext" id="DPC_todate" size="30" autocomplete="off"    style="background:#FEFFE6;" value="<? echo(datetimelocal('d-m-Y')); ?>" /></td>
+                      <td valign="top"><input name="todate" type="text" class="swifttext" id="DPC_todate" size="30" autocomplete="off"    style="background:#FEFFE6;" value="<?php echo(datetimelocal('d-m-Y')); ?>" /></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top" bgcolor="#F7FAFF">Service Charge:</td>
@@ -36,11 +36,11 @@
                     <tr bgcolor="#edf4ff">
                       <td valign="top">Solved By:</td>
                       <td valign="top"><select name="solvedby" id="solvedby" class="swiftselect">
-                        <? if($usertype == 'MANAGEMENT' || $usertype == 'ADMIN' || $usertype == 'TEAMLEADER') 
+                        <?php if($usertype == 'MANAGEMENT' || $usertype == 'ADMIN' || $usertype == 'TEAMLEADER') 
 						{ ?>
                        <option value="">ALL</option>
-                        <? include('../inc/useridselectionreports.php'); } else {  ?>
-                        <?  include('../inc/useridselectionreports.php'); } ?>
+                        <?php include('../inc/useridselectionreports.php'); } else {  ?>
+                        <?php  include('../inc/useridselectionreports.php'); } ?>
                       </select></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
@@ -92,7 +92,7 @@ Pending Visits</label></td>
                       <td valign="top">Product group:</td>
                       <td valign="top" >
                         <span id="filterprdgroupdisplay">
-                        <? include('../inc/productgroup.php');  
+                        <?php include('../inc/productgroup.php');  
 							productname('s_productgroup','');
                         ?>
                       <!-- Details are in javascript.js page as a function prdgroup();-->
@@ -105,7 +105,7 @@ Pending Visits</label></td>
                       
                       <select name="productname" id="productname" class="swiftselect">
                         <option value="">ALL</option>
-                         <? include('../inc/productfilter.php'); ?>
+                         <?php include('../inc/productfilter.php'); ?>
                       </select>
                       </td>
                     </tr>
@@ -124,18 +124,18 @@ Pending Visits</label></td>
                     <tr bgcolor="#f7faff">
                       <td valign="top">Registered By:</td>
                       <td valign="top"><select name="userid" id="userid" class="swiftselect">
-                        <? if($usertype == 'MANAGEMENT' || $usertype == 'ADMIN' || $usertype == 'TEAMLEADER') 
+                        <?php if($usertype == 'MANAGEMENT' || $usertype == 'ADMIN' || $usertype == 'TEAMLEADER') 
 						{ ?>
                         <option value="">ALL</option>
-                        <? include('../inc/useridselectionreports.php'); } else { ?>
-                        <?  include('../inc/useridselectionreports.php'); } ?>
+                        <?php include('../inc/useridselectionreports.php'); } else { ?>
+                        <?php  include('../inc/useridselectionreports.php'); } ?>
                       </select></td>
                     </tr>
                     <tr bgcolor="#edf4ff">
                       <td valign="top">Support Unit:</td>
                       <td valign="top"><select name="supportunit" class="swiftselect" id="supportunit"  >
                         <option value="">ALL</option>
-                        <? include('../inc/supportunit.php'); ?>
+                        <?php include('../inc/supportunit.php'); ?>
                       </select></td>
                     </tr>
                     <tr bgcolor="#f7faff">
@@ -196,7 +196,7 @@ Pending Visits</label></td>
   <tr>
     <td><div id="gc-form-error"></div></td>
   </tr>
-  <? include('../inc/nameload.php'); ?>
+  <?php include('../inc/nameload.php'); ?>
 </table>
 </div>
 
@@ -209,6 +209,6 @@ Pending Visits</label></td>
   <tr>
     <td><div id="gq-form-error"></div></td>
   </tr>
-  <? include('../inc/questionload.php'); ?>
+  <?php include('../inc/questionload.php'); ?>
 </table>
 </div>
