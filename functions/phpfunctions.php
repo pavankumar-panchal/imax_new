@@ -1,7 +1,7 @@
 <?php
 
 error_reporting(E_ALL);
-ini_set("display_errors",1);
+ini_set("display_errors", 1);
 
 
 //Include Database Configuration details
@@ -14,7 +14,7 @@ if (file_exists("../inc/dbconfig.php")) {
 
 
 
-$dbhost = "localhost";
+	$dbhost = "localhost";
 $dbuser = "root";
 $dbpwd = "";
 $dbname = "relyon_imax";
@@ -172,17 +172,17 @@ function runmysqlqueryfetch_old($query)
 
 function changedateformat($date)
 {
-    if ($date !== null && $date !== "0000-00-00") {
-        if (strpos($date, " ")) {
-            $result = explode(" ", $date);
-        } else {
-            $result = preg_split("/[:.\/-]/", $date);
-        }
-        $date = $result[2] . "-" . $result[1] . "-" . $result[0];
-    } else {
-        $date = "";
-    }
-    return $date;
+	if ($date !== null && $date !== "0000-00-00") {
+		if (strpos($date, " ")) {
+			$result = explode(" ", $date);
+		} else {
+			$result = preg_split("/[:.\/-]/", $date);
+		}
+		$date = $result[2] . "-" . $result[1] . "-" . $result[0];
+	} else {
+		$date = "";
+	}
+	return $date;
 }
 
 
@@ -1007,9 +1007,6 @@ function imaxcreatecookie($cookiename, $cookievalue)
 
 }
 
-//Function to get cookie and encode it and validate
-
-
 
 function imaxgetcookie($cookiename)
 {
@@ -1049,10 +1046,6 @@ function imaxgetcookie($cookiename)
 	// Cookie Not Available or Validation failed
 	return false;
 }
-
-
-
-
 
 //Function to logout (clear cookies)
 function imaxssmlogout()
@@ -1103,7 +1096,6 @@ function sendsupportcallmail($lastslno, $customerslno)
 		$emailid['meghana'] = 'meghana.b@relyonsoft.com';
 	else
 		//$emailid[] = $emailids;
-
 
 		$fromname1 = "Relyon";
 	$fromemail = "imax@relyon.co.in";
@@ -1301,4 +1293,3 @@ function displaydatareport($slno, $fromdate, $todate)
 
 
 ?>
-

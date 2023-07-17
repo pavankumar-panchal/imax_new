@@ -1,0 +1,21 @@
+vankumar'),
+('Pavankumar2', 'panchalpavan800@gmai', 'pAVAN@786'),
+('Pavankumar3', 'panchalpavan800@gmai', 'Pavan'),
+('Rafeeq', 'panchalpavan800@gmai', 'Rafeeq'),
+('xyz', 'xyz@gmail.com', 'xyz'),
+('zbcd', 'abcd@gmail.com', 'abcd');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`username`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

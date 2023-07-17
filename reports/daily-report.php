@@ -6,11 +6,11 @@ include_once('../inc/stylesnscripts.php');
 ?>
 <link href="../css/jquery-ui.css" rel="stylesheet" type="text/css" />
 <script src="../js/jquery-ui.min.js"></script>
-<!--<script type="text/javascript" language="javascript" src="../functions/data_ajax.js"></script>
--->
+<script type="text/javascript" language="javascript" src="../functions/data_ajax.js"></script>
+
 <script type="text/javascript" language="javascript" src="../functions/daily-report.js"></script>
-<!--<script src="../js/jquery-1.4.2.min.js?dummy=<?php echo (rand()); ?>" language="javascript"></script>
---><!--<link rel="stylesheet" type="text/css" href="../style/main.css?dummy = <?php echo (rand()); ?>">-->
+<script src="../js/jquery-1.4.2.min.js?dummy=<?php echo (rand()); ?>" language="javascript"></script>
+<link rel="stylesheet" type="text/css" href="../style/main.css?dummy = <?php echo (rand()); ?>">
 <div id="contentdiv" style="display:block;">
   <table width="100%" border="0" cellspacing="0" cellpadding="4">
     <tr>
@@ -76,7 +76,6 @@ include_once('../inc/stylesnscripts.php');
                               ?>
                               </span>
                             </td>
-
                           </tr>
                         </table>
                       </td>
@@ -120,12 +119,10 @@ include_once('../inc/stylesnscripts.php');
           </tr>
           <tr>
             <td colspan="2" valign="top">
-
               <div id="dailyreport" style="overflow:auto; height:300px; width:100%; padding:2px;" align="center"></div>
               <div id="calldataitem" title="Company Detail" style="margin-top:3%;"></div>
               <div id="display_form" title="Complaint Details" style="margin-top:3%;"></div>
             </td>
-
           </tr>
         </table>
       </td>
