@@ -1,4 +1,7 @@
-<?
+<?php 
+error_reporting(E_ALL);
+ini_set("display_errors",1);
+
 include('../functions/phpfunctions.php');
 ini_set('memory_limit', '1024M');
 $searchcriteria = $_POST['searchcriteria'];

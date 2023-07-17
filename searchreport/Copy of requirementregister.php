@@ -1,4 +1,6 @@
-<?
+<?php 
+error_reporting(E_ALL);
+ini_set("display_errors",1);
 include('../functions/phpfunctions.php');
 ini_set('memory_limit', '1024M');
 		$fromdate = $_POST['fromdate']; $todate = $_POST['todate']; $s_customername = $_POST['s_customername'];

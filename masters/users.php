@@ -1,4 +1,7 @@
 <?php
+
+error_reporting(E_ALL);
+ini_set('dispaly_errors',1);
 if($usertype <> 'ADMIN')
 {
 	header("location:../index.php?a_link=home_dashboard");

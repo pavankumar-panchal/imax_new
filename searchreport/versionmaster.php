@@ -1,4 +1,7 @@
-<?
+<?php 
+error_reporting(E_ALL);
+ini_set("display_errors",1);
+
 include('../inc/includefiles.php');
 $searchcriteria = $_POST['searchcriteria'];
 $selection = $_POST['selection'];

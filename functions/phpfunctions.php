@@ -1,4 +1,9 @@
 <?php
+
+error_reporting(E_ALL);
+ini_set("display_errors",1);
+
+
 //Include Database Configuration details
 if (file_exists("../inc/dbconfig.php")) {
 	include('../inc/dbconfig.php');
@@ -86,7 +91,6 @@ function runmysqlquery($query)
 {
 	global $newconnection;
 	$dbname = 'relyon_imax';
-
 	//Connect to Database
 	mysqli_select_db($newconnection, $dbname) or die("Cannot connect to database");
 	set_time_limit(3600);

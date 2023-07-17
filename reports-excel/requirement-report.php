@@ -1,4 +1,9 @@
 <?
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+
+
 include('../functions/phpfunctions.php');
 $grid = '';
 if(isset($_POST['requirementreportgrid']))
