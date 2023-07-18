@@ -13,8 +13,7 @@ if (file_exists("../inc/dbconfig.php")) {
 
 
 
-
-	$dbhost = "localhost";
+$dbhost = "localhost";
 $dbuser = "root";
 $dbpwd = "";
 $dbname = "relyon_imax";
@@ -257,10 +256,10 @@ function changetime($time)
 
 function runaccessqueryco($query)
 {
-	global $codsnname, $codsnuser, $codsnpwd;
+	global $codsnname, $codsnuser, $codsnpwd , $dbname;
 
 	//Connect to host
-	$connection = odbc_connect($codsnname, $codsnuser, $codsnpwd) or die("Cannot connect to Access server host");
+	$connection = odbc_connect($codsnname, $codsnuser, $codsnpwd, $dbname) or die("Cannot connect to Access server host");
 
 	//Run the query
 	$result = odbc_exec($connection, $query) or die(" run Query Failed in runquery function");
