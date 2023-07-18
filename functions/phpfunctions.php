@@ -13,7 +13,8 @@ if (file_exists("../inc/dbconfig.php")) {
 
 
 
-$dbhost = "localhost";
+
+	$dbhost = "localhost";
 $dbuser = "root";
 $dbpwd = "";
 $dbname = "relyon_imax";
@@ -256,10 +257,10 @@ function changetime($time)
 
 function runaccessqueryco($query)
 {
-	global $codsnname, $codsnuser, $codsnpwd , $dbname;
+	global $codsnname, $codsnuser, $codsnpwd;
 
 	//Connect to host
-	$connection = odbc_connect($codsnname, $codsnuser, $codsnpwd, $dbname) or die("Cannot connect to Access server host");
+	$connection = odbc_connect($codsnname, $codsnuser, $codsnpwd) or die("Cannot connect to Access server host");
 
 	//Run the query
 	$result = odbc_exec($connection, $query) or die(" run Query Failed in runquery function");
@@ -1006,6 +1007,7 @@ function imaxcreatecookie($cookiename, $cookievalue)
 
 }
 
+//Function to get cookie and encode it and validate
 
 function imaxgetcookie($cookiename)
 {

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>SSM Login</title>
+    <link rel="stylesheet" type="text/css" href="style/mainindex.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        #login-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .login-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 350px;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .form-actions {
+            text-align: center;
+        }
+
+        .form-actions button {
+            padding: 12px 60px;
+            border: none;
+            border-radius: 4px;
+            background-color: #E36E38;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-actions button:hover {
+            background-color: #c54e24;
+        }
+  
+
+        .footer {
+            text-align: center;
+            color: #777;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="login-container">
+        <div class="login-card">
+            <div class="logo">
+                <img src="./images/ssm-new-logo.jpg" alt="SSM Logo" />
+            </div>
+            <form id="submitform" name="submitform" method="post" action="">
+                <div class="form-group">
+                    <label for="username">User Name:</label>
+                    <input name="username" type="text" class="form-fileds" id="username" required />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input name="password" type="password" class="form-fileds" id="password" required />
+                </div>
+                <!-- <div class="error-message" id="form-error">
+                    <noscript>
+                        Enable cookies/javscript/both in your browser, then
+                    </noscript>
+                    <?php if ($message != '') echo ($message); ?>
+                </div> -->
+                <div class="form-actions">
+                    <button name="login" type="submit" class="log" id="login" onclick="checknavigatorproperties()">Login</button>
+                    <button name="clear" type="reset"  class="clr" cid="clear">Clear</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        A product of Relyon Web Management | Copyright © 2012
+        Relyon Softech Ltd. All rights reserved.
+    </div>
+</body>
+
+</html>

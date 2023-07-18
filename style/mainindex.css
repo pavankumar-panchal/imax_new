@@ -604,7 +604,7 @@ form
 	HEIGHT: 16px;
 }
 
-/*.grid-active-tabclass
+.grid-active-tabclass
 {
 	background:url(../images/grid-tab-inactive.gif) no-repeat;
 	width:84;
@@ -612,9 +612,9 @@ form
 	color:#FFFFFF;
 	padding-bottom:4px;
 	padding-top:4px;
-}*/
+}
 
-/*.grid-tabclass
+.grid-tabclass
 {
 	background:url(../images/grid-tab-inactive1.gif) no-repeat;
 	width:84;
@@ -623,7 +623,7 @@ form
 	color:#000000;
 	padding-bottom:4px;
 	padding-top:4px;
-} */
+}
 
 .table-border-grid
 {
@@ -637,9 +637,7 @@ form
 	border-left:#d1dceb 1px solid;
 }
 
-.gridrow
-{
-}
+
 
 .gridrow:hover
 {

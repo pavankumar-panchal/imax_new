@@ -50,6 +50,8 @@ $year = date("Y", mktime(0, 0, 0, date('n')));
 $attendanceCal = attendanceCalendardashboard(date('m'), $year, $user);
 
 ?>
+
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 

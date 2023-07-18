@@ -702,10 +702,10 @@ form
 	BORDER: solid 0 #FFFFFF; BACKGROUND: URL(../images/bluebuttonbg.gif) no-repeat; HEIGHT: 21px; WIDTH: 85px; COLOR: #000000; FONT-FAMILY: Verdana, Tahoma; FONT-SIZE: 11px; MARGIN: 0px; padding-top: 3px; padding-bottom: 15px; vertical-align:middle;
 	cursor:pointer;
 }
-/* .swiftradiobutton
+.swiftradiobutton
 {
-	BORDER: solid 1px #FF6600; BACKGROUND: COLOR:#000000; FONT-FAMILY: Verdana, Tahoma; FONT-SIZE: 11px; MARGIN: 0px; padding-top:0px; padding-bottom:0px; vertical-align:middle;	WIDTH: 5px; HEIGHT: 5px;
-} */
+	BORDER: solid 1px #FF6600; BACKGROUND: COLOR: #000000; FONT-FAMILY: Verdana, Tahoma; FONT-SIZE: 11px; MARGIN: 0px; padding-top: 0px; padding-bottom: 0px; vertical-align:middle;	WIDTH: 5px; HEIGHT: 5px;
+}
 .swiftchoicebutton-orange
 {
 	BORDER: solid 0 #FFFFFF; BACKGROUND: URL(../images/yellowbuttonbigbg.gif) no-repeat; HEIGHT: 21px; WIDTH: 85px; COLOR: #000000; FONT-FAMILY: Verdana, Tahoma; FONT-SIZE: 11px; MARGIN: 0px; padding-top: 3px; padding-bottom: 15px; vertical-align:middle;
@@ -1166,7 +1166,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73bfd4', end
 
 .reportheader
 {
-background: #70b0e0;  
+background: #70b0e0;  Old browsers 
 background: -moz-linear-gradient(top,  #70b0e0 53%, #88bfe8 74%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(53%,#70b0e0), color-stop(74%,#88bfe8)); /* Chrome,Safari4+ */
 background: -webkit-linear-gradient(top,  #70b0e0 53%,#88bfe8 74%); /* Chrome10+,Safari5.1+ */

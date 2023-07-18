@@ -37,7 +37,7 @@ if (isset($_POST["login"])) {
 			$locationname = $fetch['locationname'];
 			$type = $fetch['type'];
 			$logintype = 'IN';
-			$remark=$fetch['energencyremarks'];
+			$remark = $fetch['energencyremarks'];
 
 			if ($existinguser == 'no')
 				$message = '<span class="error-message"> This User id not allowed to login </span>';
@@ -49,7 +49,7 @@ if (isset($_POST["login"])) {
 
 				imaxcreatecookie('ssmuserid', $userid);
 
-				$query = "INSERT INTO ssm_usertime(userid,logindate,logintime,type,locationname,logintype,remarks) values('" . $userid . "','" . changedateformat($date) . "','" . datetimelocal('H:i') . "','" . $type . "','" . $locationname . "','" . $logintype . "', '".$remark."')";
+				$query = "INSERT INTO ssm_usertime(userid,logindate,logintime,type,locationname,logintype,remarks) values('" . $userid . "','" . changedateformat($date) . "','" . datetimelocal('H:i') . "','" . $type . "','" . $locationname . "','" . $logintype . "', '" . $remark . "')";
 				$result = runmysqlquery($query);
 
 				$url = './home/index.php?a_link=home_dashboard';
@@ -66,6 +66,7 @@ if (isset($_POST["clear"])) {
 }
 
 ?>
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
